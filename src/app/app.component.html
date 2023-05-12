@@ -1,0 +1,187 @@
+
+<!-- Correr server con ng serve -->
+
+<section class="container-fluid">
+    <app-header></app-header>
+    <section>
+        <img src="../assets/banner.png" id="banner" class="img-fluid" alt="banner-img">
+        <img src="../assets/perfil.png" id="profile" class="img-fluid" alt="profile-img">
+        <h4 id="name">Carlo Renosto</h4>
+        <ul>
+            <li id="shortdesc">
+                <h6>20 años. Estudiante.</h6>
+            </li>
+            <li id="location">
+                <h6>Tigre, Buenos Aires (Argentina)</h6>
+            </li>
+        </ul>
+        <button id="button-add" class="btn btn-light">Añadir sección</button>
+    </section>
+
+    <section id="section-1" class="container-fluid">
+        <h3 id="section-1-title">Acerca de</h3>
+        <p id="section-1-desc">Actual estudiante de la carrera "Técnico
+            universitario en Programación" en la Universidad Tecnológica Nacional (UTN).<br>Cursante de Argentina Programa.</p>
+    </section>
+
+    <section class="container-fluid section-exp">
+        <h3 id="section-exp-title"><br>Experiencia</h3>
+        <p id="section-exp-desc">Sin experiencia laboral hasta el momento.</p>
+    </section>
+
+    <section id="section-educ" class="container-fluid">
+        <h3 id="section-educ-title">Educación</h3>
+        <section>
+            <div class="section-educ-1" style="width: 440px; display: inline-block;">
+                <p class="section-educ-title">Nivel secundario</p>
+                <hr>
+                <p style="color: #0CC800;">Estado: Completo</p>
+                <p>Año: 2015-2020</p>
+                <p>Institución: -</p>
+            </div>
+            <div class="section-educ-1" style="width: 440px; display: inline-block;">
+                <p class="section-educ-title">Nivel superior (universitario)</p>
+                <hr>
+                <p style="color: #FECC00;">Estado: En curso (Técnico Universitario en Programación)</p>
+                <p>Año: 2021-Presente</p>
+                <a class="link" href="https://www.frgp.utn.edu.ar/" target="_blank">
+                    <img src="../assets/utn-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 55px;">
+                    <p class="section-educ-place">Institución: Universidad Tecnológica Nacional</p>
+                </a>
+            </div>
+        </section>
+        <section>
+            <div class="section-educ-1" style="width: 440px; display: inline-block;">
+                <p class="section-educ-title">Inglés nivel 9 (B1)</p>
+                <hr>
+                <p style="color: #0CC800;">Estado: Completo</p>
+                <p>Año: 2022</p>
+                <a class="link" href="http://www.idiomas.filo.uba.ar/" target="_blank">
+                    <img src="../assets/uba-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 90px;">
+                    <p class="section-educ-place">Institución: Laboratorio de Idiomas UBA</p>
+                </a>
+            </div>
+            <div class="section-educ-1" style="width: 440px; display: inline-block; margin-bottom: 40px;">
+                <p class="section-educ-title">Inglés nivel 10</p>
+                <hr>
+                <p style="color: #FECC00;">Estado: En curso</p>
+                <p>Año: 2023</p>
+                <a class="link" href="http://www.idiomas.filo.uba.ar/" target="_blank">
+                    <img src="../assets/uba-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 90px;">
+                    <p class="section-educ-place">Institución: Laboratorio de Idiomas UBA</p>
+                </a>
+            </div>
+        </section>
+    </section>
+
+    <section id="section-skills" class="container-fluid">
+        <h3 id="section-skills-title">Hard & Soft Skills</h3>
+        <div>
+            <!-- HTML -->
+            <div class="circle-card">
+                <div class="circle-wrap">
+                    <div class="circle">
+                        <div class="mask full-1">
+                            <div class="fill-1"></div>
+                        </div>
+                        <div class="mask half">
+                            <div class="fill-1"></div>
+                        </div>
+                        <div class="inside-circle">65%</div>
+                    </div>
+                    <h4 class="circle-name">HTML</h4>
+                </div>
+            </div>
+            <!-- CSS -->
+            <div class="circle-card">
+                <div class="circle-wrap">
+                    <div class="circle">
+                        <div class="mask full-2">
+                            <div class="fill-2"></div>
+                        </div>
+                        <div class="mask half">
+                            <div class="fill-2"></div>
+                        </div>
+                        <div class="inside-circle">65%</div>
+                    </div>
+                    <h4 class="circle-name">CSS</h4>
+                </div>
+            </div>
+            <!-- JS -->
+            <div class="circle-card">
+                <div class="circle-wrap">
+                    <div class="circle">
+                        <div class="mask full-3">
+                            <div class="fill-3"></div>
+                        </div>
+                        <div class="mask half">
+                            <div class="fill-3"></div>
+                        </div>
+                        <div class="inside-circle">60%</div>
+                    </div>
+                    <h4 class="circle-name">JavaScript</h4>
+                </div>
+            </div>
+        </div>
+        <div>
+            <!-- Soft Skill 1: Organización -->
+            <div class="circle-card" style="margin-bottom: 40px;">
+                <div class="circle-wrap">
+                    <div class="circle">
+                        <div class="mask full-4">
+                            <div class="fill-4"></div>
+                        </div>
+                        <div class="mask half">
+                            <div class="fill-4"></div>
+                        </div>
+                        <div class="inside-circle">70%</div>
+                    </div>
+                    <h4 class="circle-name">Organización</h4>
+                </div>
+            </div>
+            <!-- Soft Skill 2: Colaboración -->
+            <div class="circle-card">
+                <div class="circle-wrap">
+                    <div class="circle">
+                        <div class="mask full-5">
+                            <div class="fill-5"></div>
+                        </div>
+                        <div class="mask half">
+                            <div class="fill-5"></div>
+                        </div>
+                        <div class="inside-circle">80%</div>
+                    </div>
+                    <h4 class="circle-name">Colaboración</h4>
+                </div>
+            </div>
+            <!-- Soft Skill 3: Gestión del tiempo -->
+            <div class="circle-card">
+                <div class="circle-wrap">
+                    <div class="circle">
+                        <div class="mask full-6">
+                            <div class="fill-6"></div>
+                        </div>
+                        <div class="mask half">
+                            <div class="fill-6"></div>
+                        </div>
+                        <div class="inside-circle">70%</div>
+                    </div>
+                    <h4 class="circle-name">Respuesta</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-projects" class="container-fluid">
+        <h3 id="section-projects-title">Proyectos</h3>
+        <a class="link" href="https://github.com/carlo-renosto/portfolio-FrontEnd" target="_blank">
+            <section id="section-projects-section">
+                <h5>Portfolio Web</h5>
+                <img src="../assets/argprograma.png" id="section-projects-logo">
+                <p><br>Un portfolio personal que describe brevemente mis habilidades y mi experiencia educativa y laboral.</p>
+                <hr>
+                <p>Fecha de realización: 2023</p>
+            </section>
+        </a>
+    </section>
+</section>
