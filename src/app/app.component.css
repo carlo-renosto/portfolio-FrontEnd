@@ -3,6 +3,10 @@ h3 {
     margin-left: 70px;
 }
 
+#section-root {
+    display: block;
+}
+
 #banner {
     position: relative;
     max-width: 90%;
