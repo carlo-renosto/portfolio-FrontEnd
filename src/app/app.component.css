@@ -16,35 +16,60 @@ h3 {
 }
 
 #profile {
+    width: 350px;
+}
+
+#profile-pic {
+    display: inline-block;
     position: relative;
     width: 150px; 
     min-height: 140px;
     max-height: 140px; 
+    border: 2px solid #004D90;
     border-radius: 50%; 
 }
 
-#name { 
-    position: relative;
-    margin-left: 145px;
-    bottom: 60px;
+#name {
+    width: fit-content;
+}
+
+#name-text { 
+    display: inline-block;
+    margin-left: 150px;
 }
 
 #shortdesc {
+    width: fit-content;
     position: relative;
     margin-left: 150px;
     bottom: 40px;
     font-family: Arial;
+}
+
+#desc {
+    display: inline-block;
 }
 
 #location {
+    width: fit-content;
     position: relative;
     margin-left: 150px;
     bottom: 40px;
     font-family: Arial;
 }
 
-#button-add {
+#loc {
+    display: inline-block;
+}
+
+#button-show {
+    display: none;
     margin-left: 70px;
+}
+
+#button-hide {
+    display: none;
+    margin-left: 10px;
 }
 
 #section-1 {
@@ -60,6 +85,7 @@ h3 {
 }
 
 #section-1-desc {
+    display: inline-block;
     margin-top: 10px;
     margin-left: 70px;
     margin-bottom: 40px;
@@ -76,6 +102,7 @@ h3 {
 }
 
 #section-exp-desc {
+    display: inline-block;
     margin-left: 70px;
     margin-bottom: 40px;
 }
@@ -102,7 +129,11 @@ h3 {
 }
 
 .section-educ-title {
-    text-align: center;
+    display: inline-block;
+}
+
+.section-educ-paragraph {
+    display: inline-block;
 }
 
 .section-educ-place {
@@ -134,6 +165,7 @@ h3 {
 }
 
 #section-projects {
+    display: inline-block;
     margin-bottom: 30px;
     border: 2px solid #004D90;
     border-radius: 25px;
@@ -189,6 +221,20 @@ h3 {
     margin-left: 65px; 
     margin-top: 20px; 
     box-shadow: 5px 5px;
+}
+
+/* Botones (Edición) */
+
+.btn-edit {
+    display: none;
+    position: relative;
+    float: right;
+    border: 0px;
+    background-color: transparent; 
+}
+
+#btn-edit-1 {
+    top: 70px;
 }
 
 /* Porcentajes */

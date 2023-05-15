@@ -9,22 +9,21 @@ import { Router } from '@angular/router';
 
 export class HeaderComponent {
     title:string = "App";
-    static login:boolean = false;
     
     constructor(private router: Router) {
-        HeaderComponent.login = false;
     }
 
-    goToLogin() {
-        if(HeaderComponent.login == false) { // login
+    loginClick() {
+        if(localStorage.getItem('login') == '0') { // login
             this.router.navigate(['/login']);
 
-            editElements();
-            
-            HeaderComponent.login = true;
+            showLogin();
         }
-        else {
-            HeaderComponent.login = false; // logout
+        else { // logout
+            localStorage.setItem('login', '0');
+            showElements();
+            localStorage.setItem('user', 'User');
+            localStorage.setItem('pwd', 'user');
         }
     }
 }
@@ -32,11 +31,11 @@ export class HeaderComponent {
  window.addEventListener('popstate', function (e) {
     var state = e.state;
     if (state !== null) {
-        editElementsReverse();
+        showElements();
     }
 });
 
-function editElements() {
+function showLogin() {
     var sectionMain = document.getElementById("section-main");
     var sectionRoot = document.getElementById("section-root");
     var sectionLogin = document.getElementById("section-login");
@@ -55,10 +54,14 @@ function editElements() {
     }    
 }
 
-function editElementsReverse() {
+function showElements() {
     var sectionMain = document.getElementById("section-main");
     var sectionRoot = document.getElementById("section-root");
     var sectionLogin = document.getElementById("section-login");
+    var buttonLogin = document.getElementById("header-login");
+    var button1 = document.getElementById("button-show");
+    var button2 = document.getElementById("button-hide");
+    var buttonEdit = document.getElementsByClassName("btn-edit") as HTMLCollectionOf<HTMLElement>;
 
     if(sectionMain != null) {
         sectionMain.style.width = "95%";
@@ -71,5 +74,35 @@ function editElementsReverse() {
     }
     if(sectionLogin != null) {
         sectionLogin.style.display = "none";
-    }  
+    } 
+    if(buttonLogin != null) {
+        if(localStorage.getItem('login') == '1') {
+            buttonLogin.style.backgroundColor = "#F20707";
+            buttonLogin.textContent = "Logout";
+            if(buttonEdit != null) {
+                for(var i=0, length=buttonEdit.length; i<length; i++) {
+                    buttonEdit[i].style["display"] = "initial";
+                }
+            }
+        }
+        else {
+            buttonLogin.style.backgroundColor = "#0275D8";
+            buttonLogin.textContent = "Login";
+            if(buttonEdit != null) {
+                for(var i=0, length=buttonEdit.length; i<length; i++) {
+                    buttonEdit[i].style["display"] = "none";
+                }
+            }
+        }
+    }    
+    if(button1 != null && button2 != null) {
+        if(localStorage.getItem('login') == '1') {
+            button1.style.display = "initial";
+            button2.style.display = "initial";
+        }
+        else {
+            button1.style.display = "none";
+            button2.style.display = "none"; 
+        }
+    } 
 }

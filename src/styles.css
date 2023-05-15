@@ -10,8 +10,7 @@
 /* Media queries */
 
 @media(max-width: 1280px) {
-    #profile {
-        bottom: 60px;
+    #profile-pic {
         left: 145px;
     }
     body {
@@ -26,9 +25,8 @@
     #banner {
         margin-left: 55px; 
     }
-    #profile {
-        bottom: 60px;
-        left: 110px;
+    #profile-pic {
+        left: 150px;
     }
     #name {
         right: 35px;
@@ -42,9 +40,8 @@
     #banner {
         margin-left: 60px; 
     }
-    #profile {
-        bottom: 60px;
-        left: 100px;
+    #profile-pic {
+        left: 145px;
     }
     #name {
         right: 40px;
@@ -58,8 +55,7 @@
     #banner {
         margin-left: 95px; 
     }
-    #profile {
-        bottom: 60px;
+    #profile-pic {
         left: 150px;
     }
     #name {
