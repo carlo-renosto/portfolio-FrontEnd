@@ -10,14 +10,14 @@ import { User } from '../models/user';
 })
 
 export class LoginComponent {
-    users:User[];
-    constructor(private router:Router, private service:UserService) {
-        this.users = service.getUsers();
+    users:User[]=[];
+
+    constructor(private router:Router, private serviceU:UserService) {
+        this.users = this.serviceU.getUsers();
     }
 
-    ingresar() {
-        this.users = this.service.getUsers();
-        
+    ingresar() { // por alguna razón no funciona al primer intento, pero sí en el resto
+        this.users = this.serviceU.getUsers();
         if(loginCheckFields()) {
             if(loginCheckValues(this.users)) {
                 this.router.navigate(['../']);

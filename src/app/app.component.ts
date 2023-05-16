@@ -1,3 +1,4 @@
+
 import { AfterViewInit, Component} from '@angular/core';
 
 @Component({
@@ -7,14 +8,11 @@ import { AfterViewInit, Component} from '@angular/core';
 })
 
 export class AppComponent implements AfterViewInit {
-  title = 'portfolioWeb';
+    title = 'portfolioWeb';
 
     ngAfterViewInit():void {
         if(localStorage.getItem('user') == 'Admin' && localStorage.getItem('pwd') == 'argprograma') {
             showElements();
-        }
-        else {
-            hideElements();
         }
     }
 
@@ -35,6 +33,22 @@ export class AppComponent implements AfterViewInit {
         if(element != null && address != null) {
             address.style.pointerEvents = element.contentEditable == "true" ? 'initial' : "none";
             element.contentEditable = element.contentEditable == "true" ? "false" : "true";
+        }
+    }
+
+    onButtonShow() {
+        var element = document.getElementById("sections");
+
+        if(element != null) {
+            element.style.display = "initial";
+        }
+    }
+
+    onButtonHide() {
+        var element = document.getElementById("sections");
+
+        if(element != null) {
+            element.style.display = "none";
         }
     }
 }
@@ -92,6 +106,3 @@ function showElements() {
     }
 }
 
-function hideElements() {
-    
-}

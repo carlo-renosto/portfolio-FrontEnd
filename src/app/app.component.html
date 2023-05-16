@@ -8,7 +8,7 @@
         <section style="position: relative; bottom: 60px;">
             <section id="profile">
                 <img src="../assets/perfil.png" id="profile-pic" class="img-fluid" alt="profile-img">
-                <button id="btn-edit-1" class="btn-edit" (click)="onEdit('profile-pic')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-edit-1" class="btn-edit" (click)="onEdit('profile-pic')" type="file"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
             </section>
 
             <section id="name">
@@ -27,225 +27,232 @@
             <button id="btn-edit-4" class="btn-edit" (click)="onEdit('loc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
         </section>
 
-        <button id="button-show" class="btn btn-light show-hide-buttons">Mostrar secciones</button>
-        <button id="button-hide" class="btn btn-light show-hide-buttons">Ocultar secciones</button>
+        <button id="button-show" class="btn btn-light show-hide-buttons" (click)="onButtonShow()">Mostrar secciones</button>
+        <button id="button-hide" class="btn btn-light show-hide-buttons" (click)="onButtonHide()">Ocultar secciones</button>
     </section>
 
-    <section id="section-1" class="container-fluid">
-        <h3 id="section-1-title">Acerca de</h3>
-        <p id="section-1-desc">Actual estudiante de la carrera "Técnico
-            universitario en Programación" en la Universidad Tecnológica Nacional (UTN).<br>Cursante de Argentina Programa.</p>
-        <button id="btn-edit-5" class="btn-edit" (click)="onEdit('section-1-desc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-    </section>
-
-    <section class="container-fluid section-exp">
-        <h3 id="section-exp-title"><br>Experiencia</h3>
-        <p id="section-exp-desc">Sin experiencia laboral hasta el momento.</p>
-        <button id="btn-edit-6" class="btn-edit" (click)="onEdit('section-exp-desc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-    </section>
-
-    <section id="section-educ" class="container-fluid">
-        <h3 id="section-educ-title">Educación</h3>
-        <section>
-            <!-- Educacion 1 -->
-            <div class="section-educ-1" style="width: 560px; display: inline-block;">
-                <p id="section-educ1-p1" class="section-educ-title">Nivel secundario</p>
-                <button id="btn-edit-7" class="btn-edit" (click)="onEdit('section-educ1-p1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                <hr>
-                <div>
-                    <p id="section-educ1-p2" class="section-educ-paragraph">Estado: Completo</p>
-                    <button id="btn-edit-8" class="btn-edit" (click)="onEdit('section-educ1-p2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-                <div>
-                    <p id="section-educ1-p3" class="section-educ-paragraph">Año: 2015-2020</p>
-                    <button id="btn-edit-9" class="btn-edit" (click)="onEdit('section-educ1-p3')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-                <div>
-                    <p id="section-educ1-p4" class="section-educ-paragraph">Institución: -</p>
-                    <button id="btn-edit-10" class="btn-edit" (click)="onEdit('section-educ1-p4')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-            </div>
-            <!-- Educacion 2 -->
-            <div class="section-educ-1" style="width: 560px; display: inline-block;">
-                <p id="section-educ1-p5" class="section-educ-title">Nivel superior (universitario)</p>
-                <button id="btn-edit-11" class="btn-edit" (click)="onEdit('section-educ1-p5')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                <hr>
-                <div>
-                    <p id="section-educ1-p6" class="section-educ-paragraph">Estado: En curso (Técnico Universitario en Programación)</p>
-                    <button id="btn-edit-12" class="btn-edit" (click)="onEdit('section-educ1-p6')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-                <div>
-                    <p id="section-educ1-p7" class="section-educ-paragraph">Año: 2021-Presente</p>
-                    <button id="btn-edit-13" class="btn-edit" (click)="onEdit('section-educ1-p7')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-                <div>
-                    <a id="section-educ1-p8" class="section-educ-paragraph link" href="https://www.frgp.utn.edu.ar/" target="_blank">
-                        <img src="../assets/utn-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 110px;">
-                        <p class="section-educ-place">Institución: Universidad Tecnológica Nacional</p>
-                    </a>
-                    <button id="btn-edit-14" class="btn-edit" (click)="onEdit('section-educ1-p8')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-            </div>
+    <section id="sections">
+        <!-- Sección Acerca -->
+        <section id="section-1" class="container-fluid">
+            <h3 id="section-1-title">Acerca de</h3>
+            <p id="section-1-desc">Actual estudiante de la carrera "Técnico
+                universitario en Programación" en la Universidad Tecnológica Nacional (UTN).<br>Cursante de Argentina Programa.</p>
+            <button id="btn-edit-5" class="btn-edit" (click)="onEdit('section-1-desc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
         </section>
-       
-        <section>
-             <!-- Educacion 3 -->
-            <div class="section-educ-1" style="width: 560px; display: inline-block;">
-                <p id="section-educ1-p9" class="section-educ-title">Inglés nivel 9 (B1)</p>
-                <button id="btn-edit-15" class="btn-edit" (click)="onEdit('section-educ1-p9')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                <hr>
-                <div>
-                    <p id="section-educ1-p10" class="section-educ-paragraph">Estado: Completo</p>
-                    <button id="btn-edit-16" class="btn-edit" (click)="onEdit('section-educ1-p10')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-                <div>
-                    <p id="section-educ1-p11" class="section-educ-paragraph">Año: 2022</p>
-                    <button id="btn-edit-17" class="btn-edit" (click)="onEdit('section-educ1-p11')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-                <div>
-                    <a id="section-educ1-p12" class="section-educ-paragraph link" href="http://www.idiomas.filo.uba.ar/" target="_blank">
-                        <img src="../assets/uba-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 180px;">
-                        <p class="section-educ-place">Institución: Laboratorio de Idiomas UBA</p>
-                    </a>
-                    <button id="btn-edit-18" class="btn-edit" (click)="onEdit('section-educ1-p12')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-            </div>
 
-             <!-- Educacion 4 -->
-            <div class="section-educ-1" style="width: 560px; display: inline-block; margin-bottom: 40px;">
-                <p id="section-educ1-p13" class="section-educ-title">Inglés nivel 10</p>
-                <button id="btn-edit-19" class="btn-edit" (click)="onEdit('section-educ1-p13')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                <hr>
-                <div>
-                    <p id="section-educ1-p14" class="section-educ-paragraph">Estado: En curso</p>
-                    <button id="btn-edit-20" class="btn-edit" (click)="onEdit('section-educ1-p14')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-                <div>
-                    <p id="section-educ1-p15" class="section-educ-paragraph">Año: 2023</p>
-                    <button id="btn-edit-21" class="btn-edit" (click)="onEdit('section-educ1-p15')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-                <div>
-                    <a id="section-educ-p16" class="section-educ-paragraph link" href="http://www.idiomas.filo.uba.ar/" target="_blank">
-                        <img src="../assets/uba-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 180px;">
-                        <p class="section-educ-place">Institución: Laboratorio de Idiomas UBA</p>
-                    </a>
-                    <button id="btn-edit-22" class="btn-edit" (click)="onEdit('section-educ1-p16')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-                </div>
-                
-            </div>
+        <!-- Sección Experiencia -->
+        <section class="container-fluid section-exp">
+            <h3 id="section-exp-title"><br>Experiencia</h3>
+            <p id="section-exp-desc">Sin experiencia laboral hasta el momento.</p>
+            <button id="btn-edit-6" class="btn-edit" (click)="onEdit('section-exp-desc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
         </section>
-    </section>
 
-    <section id="section-skills" class="container-fluid">
-        <h3 id="section-skills-title">Hard & Soft Skills</h3>
-        <div>
-            <!-- HTML -->
-            <div class="circle-card">
-                <div class="circle-wrap">
-                    <div class="circle">
-                        <div class="mask full-1">
-                            <div class="fill-1"></div>
-                        </div>
-                        <div class="mask half">
-                            <div class="fill-1"></div>
-                        </div>
-                        <div class="inside-circle">65%</div>
+        <!-- Sección Educación -->
+        <section id="section-educ" class="container-fluid">
+            <h3 id="section-educ-title">Educación</h3>
+            <section>
+                <!-- Educacion 1 -->
+                <div class="section-educ-1" style="width: 560px; display: inline-block;">
+                    <p id="section-educ1-p1" class="section-educ-title">Nivel secundario</p>
+                    <button id="btn-edit-7" class="btn-edit" (click)="onEdit('section-educ1-p1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    <hr>
+                    <div>
+                        <p id="section-educ1-p2" class="section-educ-paragraph">Estado: Completo</p>
+                        <button id="btn-edit-8" class="btn-edit" (click)="onEdit('section-educ1-p2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
-                    <h4 class="circle-name">HTML</h4>
-                </div>
-            </div>
-            <!-- CSS -->
-            <div class="circle-card">
-                <div class="circle-wrap">
-                    <div class="circle">
-                        <div class="mask full-2">
-                            <div class="fill-2"></div>
-                        </div>
-                        <div class="mask half">
-                            <div class="fill-2"></div>
-                        </div>
-                        <div class="inside-circle">65%</div>
+                    <div>
+                        <p id="section-educ1-p3" class="section-educ-paragraph">Año: 2015-2020</p>
+                        <button id="btn-edit-9" class="btn-edit" (click)="onEdit('section-educ1-p3')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
-                    <h4 class="circle-name">CSS</h4>
-                </div>
-            </div>
-            <!-- JS -->
-            <div class="circle-card">
-                <div class="circle-wrap">
-                    <div class="circle">
-                        <div class="mask full-3">
-                            <div class="fill-3"></div>
-                        </div>
-                        <div class="mask half">
-                            <div class="fill-3"></div>
-                        </div>
-                        <div class="inside-circle">60%</div>
+                    <div>
+                        <p id="section-educ1-p4" class="section-educ-paragraph">Institución: -</p>
+                        <button id="btn-edit-10" class="btn-edit" (click)="onEdit('section-educ1-p4')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
-                    <h4 class="circle-name">JavaScript</h4>
                 </div>
-            </div>
-        </div>
-        <div>
-            <!-- Soft Skill 1: Organización -->
-            <div class="circle-card" style="margin-bottom: 40px;">
-                <div class="circle-wrap">
-                    <div class="circle">
-                        <div class="mask full-4">
-                            <div class="fill-4"></div>
-                        </div>
-                        <div class="mask half">
-                            <div class="fill-4"></div>
-                        </div>
-                        <div class="inside-circle">70%</div>
+                <!-- Educacion 2 -->
+                <div class="section-educ-1" style="width: 560px; display: inline-block;">
+                    <p id="section-educ1-p5" class="section-educ-title">Nivel superior (universitario)</p>
+                    <button id="btn-edit-11" class="btn-edit" (click)="onEdit('section-educ1-p5')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    <hr>
+                    <div>
+                        <p id="section-educ1-p6" class="section-educ-paragraph">Estado: En curso (Técnico Universitario en Programación)</p>
+                        <button id="btn-edit-12" class="btn-edit" (click)="onEdit('section-educ1-p6')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
-                    <h4 class="circle-name">Organización</h4>
-                </div>
-            </div>
-            <!-- Soft Skill 2: Colaboración -->
-            <div class="circle-card">
-                <div class="circle-wrap">
-                    <div class="circle">
-                        <div class="mask full-5">
-                            <div class="fill-5"></div>
-                        </div>
-                        <div class="mask half">
-                            <div class="fill-5"></div>
-                        </div>
-                        <div class="inside-circle">80%</div>
+                    <div>
+                        <p id="section-educ1-p7" class="section-educ-paragraph">Año: 2021-Presente</p>
+                        <button id="btn-edit-13" class="btn-edit" (click)="onEdit('section-educ1-p7')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
-                    <h4 class="circle-name">Colaboración</h4>
-                </div>
-            </div>
-            <!-- Soft Skill 3: Gestión del tiempo -->
-            <div class="circle-card">
-                <div class="circle-wrap">
-                    <div class="circle">
-                        <div class="mask full-6">
-                            <div class="fill-6"></div>
-                        </div>
-                        <div class="mask half">
-                            <div class="fill-6"></div>
-                        </div>
-                        <div class="inside-circle">70%</div>
+                    <div>
+                        <a id="section-educ1-p8" class="section-educ-paragraph link" href="https://www.frgp.utn.edu.ar/" target="_blank">
+                            <img src="../assets/utn-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 110px;">
+                            <p class="section-educ-place">Institución: Universidad Tecnológica Nacional</p>
+                        </a>
+                        <button id="btn-edit-14" class="btn-edit" (click)="onEdit('section-educ1-p8')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
-                    <h4 class="circle-name">Respuesta</h4>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="section-projects" class="container-fluid">
-        <h3 id="section-projects-title">Proyectos</h3>
-        <a id="link-project1" class="link" href="https://github.com/carlo-renosto/portfolio-FrontEnd" target="_blank">
-            <section id="section-projects-section">
-                <h5>Portfolio Web</h5>
-                <img src="../assets/argprograma.png" id="section-projects-logo">
-                <p><br>Un portfolio personal que describe brevemente mis habilidades y mi experiencia educativa y laboral.</p>
-                <hr>
-                <p>Fecha de realización: 2023</p>
             </section>
-        </a>
-        <button id="btn-edit-22" class="btn-edit" (click)="onEditProject('section-projects-section')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+        
+            <section>
+                <!-- Educacion 3 -->
+                <div class="section-educ-1" style="width: 560px; display: inline-block;">
+                    <p id="section-educ1-p9" class="section-educ-title">Inglés nivel 9 (B1)</p>
+                    <button id="btn-edit-15" class="btn-edit" (click)="onEdit('section-educ1-p9')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    <hr>
+                    <div>
+                        <p id="section-educ1-p10" class="section-educ-paragraph">Estado: Completo</p>
+                        <button id="btn-edit-16" class="btn-edit" (click)="onEdit('section-educ1-p10')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    </div>
+                    <div>
+                        <p id="section-educ1-p11" class="section-educ-paragraph">Año: 2022</p>
+                        <button id="btn-edit-17" class="btn-edit" (click)="onEdit('section-educ1-p11')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    </div>
+                    <div>
+                        <a id="section-educ1-p12" class="section-educ-paragraph link" href="http://www.idiomas.filo.uba.ar/" target="_blank">
+                            <img src="../assets/uba-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 180px;">
+                            <p class="section-educ-place">Institución: Laboratorio de Idiomas UBA</p>
+                        </a>
+                        <button id="btn-edit-18" class="btn-edit" (click)="onEdit('section-educ1-p12')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    </div>
+                </div>
+
+                <!-- Educacion 4 -->
+                <div class="section-educ-1" style="width: 560px; display: inline-block; margin-bottom: 40px;">
+                    <p id="section-educ1-p13" class="section-educ-title">Inglés nivel 10</p>
+                    <button id="btn-edit-19" class="btn-edit" (click)="onEdit('section-educ1-p13')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    <hr>
+                    <div>
+                        <p id="section-educ1-p14" class="section-educ-paragraph">Estado: En curso</p>
+                        <button id="btn-edit-20" class="btn-edit" (click)="onEdit('section-educ1-p14')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    </div>
+                    <div>
+                        <p id="section-educ1-p15" class="section-educ-paragraph">Año: 2023</p>
+                        <button id="btn-edit-21" class="btn-edit" (click)="onEdit('section-educ1-p15')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    </div>
+                    <div>
+                        <a id="section-educ-p16" class="section-educ-paragraph link" href="http://www.idiomas.filo.uba.ar/" target="_blank">
+                            <img src="../assets/uba-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 180px;">
+                            <p class="section-educ-place">Institución: Laboratorio de Idiomas UBA</p>
+                        </a>
+                        <button id="btn-edit-22" class="btn-edit" (click)="onEdit('section-educ1-p16')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    </div>
+                    
+                </div>
+            </section>
+        </section>
+
+        <!-- Sección Skills -->
+        <section id="section-skills" class="container-fluid">
+            <h3 id="section-skills-title">Hard & Soft Skills</h3>
+            <div>
+                <!-- HTML -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-1">
+                                <div class="fill-1"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-1"></div>
+                            </div>
+                            <div class="inside-circle">65%</div>
+                        </div>
+                        <h4 class="circle-name">HTML</h4>
+                    </div>
+                </div>
+                <!-- CSS -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-2">
+                                <div class="fill-2"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-2"></div>
+                            </div>
+                            <div class="inside-circle">65%</div>
+                        </div>
+                        <h4 class="circle-name">CSS</h4>
+                    </div>
+                </div>
+                <!-- JS -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-3">
+                                <div class="fill-3"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-3"></div>
+                            </div>
+                            <div class="inside-circle">60%</div>
+                        </div>
+                        <h4 class="circle-name">JavaScript</h4>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- Soft Skill 1: Organización -->
+                <div class="circle-card" style="margin-bottom: 40px;">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-4">
+                                <div class="fill-4"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-4"></div>
+                            </div>
+                            <div class="inside-circle">70%</div>
+                        </div>
+                        <h4 class="circle-name">Organización</h4>
+                    </div>
+                </div>
+                <!-- Soft Skill 2: Colaboración -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-5">
+                                <div class="fill-5"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-5"></div>
+                            </div>
+                            <div class="inside-circle">80%</div>
+                        </div>
+                        <h4 class="circle-name">Colaboración</h4>
+                    </div>
+                </div>
+                <!-- Soft Skill 3: Gestión del tiempo -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-6">
+                                <div class="fill-6"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-6"></div>
+                            </div>
+                            <div class="inside-circle">70%</div>
+                        </div>
+                        <h4 class="circle-name">Respuesta</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="section-projects" class="container-fluid">
+            <h3 id="section-projects-title">Proyectos</h3>
+            <a id="link-project1" class="link" href="https://github.com/carlo-renosto/portfolio-FrontEnd" target="_blank">
+                <section id="section-projects-section">
+                    <h5>Portfolio Web</h5>
+                    <img src="../assets/argprograma.png" id="section-projects-logo">
+                    <p><br>Un portfolio personal que describe brevemente mis habilidades y mi experiencia educativa y laboral.</p>
+                    <hr>
+                    <p>Fecha de realización: 2023</p>  
+                </section>
+            </a>
+            <button id="btn-edit-22" class="btn-edit" (click)="onEditProject('section-projects-section')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+        </section>
     </section>
 </section>
 

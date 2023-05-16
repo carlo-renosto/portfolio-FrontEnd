@@ -11,6 +11,8 @@ export class UserService {
     getUsers():User[] {
         this.http.get<User[]>('https://portfolioweb-springboot-i7sm.onrender.com/usuarios/traer').subscribe(result => {
             this.users = Object.assign({}, result);
+            localStorage.setItem('user', 'Admin');
+            localStorage.setItem('pwd', 'Contra');
         });
         return this.users;
     }
