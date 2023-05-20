@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
@@ -9,15 +9,18 @@ import { User } from '../models/user';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
     users:User[]=[];
 
     constructor(private router:Router, private serviceU:UserService) {
-        this.users = this.serviceU.getUsers();
     }
 
-    ingresar() { // por alguna razón no funciona al primer intento, pero sí en el resto
-        this.users = this.serviceU.getUsers();
+    ngOnInit():void {
+        this.serviceU.getUsers()
+            .subscribe(data => this.users = data);
+    }
+
+    ingresar() { 
         if(loginCheckFields()) {
             if(loginCheckValues(this.users)) {
                 this.router.navigate(['../']);

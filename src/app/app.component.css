@@ -65,11 +65,13 @@ h3 {
 #button-show {
     display: none;
     margin-left: 70px;
+    margin-bottom: 20px;
 }
 
 #button-hide {
     display: none;
     margin-left: 10px;
+    margin-bottom: 20px;
 }
 
 #section-1 {

@@ -14,9 +14,8 @@ export class HeaderComponent {
     }
 
     loginClick() {
-        if(localStorage.getItem('login') == '0') { // login
+        if(localStorage.getItem('login') != '1') { // login
             this.router.navigate(['/login']);
-
             showLogin();
         }
         else { // logout
@@ -30,7 +29,7 @@ export class HeaderComponent {
 
  window.addEventListener('popstate', function (e) {
     var state = e.state;
-    if (state !== null) {
+    if(state !== null) {
         showElements();
     }
 });

@@ -1,5 +1,11 @@
 
-import { AfterViewInit, Component} from '@angular/core';
+import { AfterViewInit, Component, OnInit} from '@angular/core';
+import { PersonaService } from './services/persona.service';
+import { Persona } from './models/persona';
+import { EducacionService } from './services/educacion.service';
+import { Educacion } from './models/educacion';
+import { ProyectoService } from './services/proyecto.service';
+import { Proyecto } from './models/proyecto';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +13,24 @@ import { AfterViewInit, Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit, AfterViewInit {
     title = 'portfolioWeb';
+    personas:Persona[] = [];
+    educaciones:Educacion[] = [];
+    proyectos:Proyecto[] = [];
+    estadoTrue:string="Completado"; estadoFalse:string="En curso";
+
+    constructor(private serviceP:PersonaService, private serviceE:EducacionService, private servicePro:ProyectoService) {
+    }
+
+    ngOnInit():void {
+        this.serviceP.getPersonas()
+            .subscribe(data => this.personas = data);
+        this.serviceE.getEducaciones()
+            .subscribe(data => this.educaciones = data);
+        this.servicePro.getProyectos()
+            .subscribe(data => this.proyectos = data);
+    }
 
     ngAfterViewInit():void {
         if(localStorage.getItem('user') == 'Admin' && localStorage.getItem('pwd') == 'argprograma') {
@@ -16,24 +38,36 @@ export class AppComponent implements AfterViewInit {
         }
     }
 
-    constructor() {
-    }
-
     onEdit(id:string) {
         var element = document.getElementById(id);
 
         if(element != null) {
             element.contentEditable = element.contentEditable == "true" ? "false" : "true";
+            if(element.textContent == "") {
+                element.textContent = "Texto";
+            }
         }
     }
-    onEditProject(id:string) {
+    onEditProject(id:string, id2:string, id3:string, id4:string) {
         var element = document.getElementById(id);
+        var elementN = document.getElementById(id2);
+        var elementD = document.getElementById(id3);
+        var elementF = document.getElementById(id4);
         var address = document.getElementById('link-project1');
 
-        if(element != null && address != null) {
+        if(element != null && address != null && elementN != null && elementD != null && elementF != null) {
             address.style.pointerEvents = element.contentEditable == "true" ? 'initial' : "none";
             element.contentEditable = element.contentEditable == "true" ? "false" : "true";
         }
+    }
+
+    onRemove(id:string) {
+        var element = document.getElementById(id);
+
+        if(element != null) {
+            element.textContent = "";
+            element.contentEditable = "false";
+        } 
     }
 
     onButtonShow() {
