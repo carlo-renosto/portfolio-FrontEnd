@@ -1,0 +1,292 @@
+
+<!-- Correr server con ng serve -->
+
+<section id="section-root" class="container-fluid">
+    <app-header></app-header>
+    <section>
+        <img src="../assets/banner.png" id="banner" class="img-fluid" alt="banner-img">
+        <section style="position: relative; bottom: 60px;">
+            <section id="profile">
+                <img src="../assets/perfil.png" id="profile-pic" class="img-fluid" alt="profile-img">
+                <!--<button id="btn-edit-1" class="btn-edit" (click)="onChangeImage('profile-pic')" type="file"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>-->
+            </section>
+
+            <section id="name">
+                <h4 id="name-text">{{personas[0].nombre}} {{personas[0].apellido}}</h4>
+                <button id="btn-edit-2" class="btn-edit" (click)="onEdit('name-text')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-2" class="btn-edit" (click)="onRemove('name-text')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </section>
+        </section>
+
+        <section id="shortdesc">
+            <h6 id="desc">{{personas[0].edad}} años. {{personas[0].ocupacion}}</h6> 
+            <button id="btn-edit-3" class="btn-edit" (click)="onEdit('desc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button id="btn-remove-3" class="btn-edit" (click)="onRemove('desc')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        </section>
+
+        <section id="location">
+            <h6 id="loc">{{personas[0].ciudad}}, {{personas[0].pais}}</h6>
+            <button id="btn-edit-4" class="btn-edit" (click)="onEdit('loc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button id="btn-remove-4" class="btn-edit" (click)="onRemove('loc')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        </section>
+
+        <button id="button-show" class="btn btn-light show-hide-buttons" (click)="onButtonShow()">Mostrar secciones</button>
+        <button id="button-hide" class="btn btn-light show-hide-buttons" (click)="onButtonHide()">Ocultar secciones</button>
+    </section>
+
+    <section id="sections">
+        <!-- Sección Acerca -->
+        <section id="section-1" class="container-fluid">
+            <h3 id="section-1-title">Acerca de</h3>
+            <p id="section-1-desc">{{personas[0].descripcion}}</p>
+            <button id="btn-edit-5" class="btn-edit" (click)="onEdit('section-1-desc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button id="btn-remove-5" class="btn-edit" (click)="onRemove('section-1-desc')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        </section>
+
+        <!-- Sección Experiencia -->
+        <section class="container-fluid section-exp">
+            <h3 id="section-exp-title"><br>Experiencia</h3>
+            <p id="section-exp-desc">{{experiencias[0].puesto}}</p>
+            <button id="btn-edit-6" class="btn-edit" (click)="onEdit('section-exp-desc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button id="btn-remove-6" class="btn-edit" (click)="onRemove('section-exp-desc')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        </section>
+
+        <!-- Sección Educación -->
+        <section id="section-educ" class="container-fluid">
+            <h3 id="section-educ-title">Educación</h3>
+            <section>
+                <!-- Educacion 1 -->
+                <div class="section-educ-1" style="width: 600px; display: inline-block;">
+                    <p id="section-educ1-p1" class="section-educ-title">{{educaciones[0].nombreCarrera}}</p>
+                    <button id="btn-edit-7" class="btn-edit" (click)="onEdit('section-educ1-p1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    <button id="btn-remove-7" class="btn-edit" (click)="onRemove('section-educ1-p1')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    <hr>
+                    <div>
+                        <p id="section-educ1-p2" class="section-educ-paragraph" *ngIf="educaciones[0].estado == true">En curso</p>
+                        <p id="section-educ1-p2" class="section-educ-paragraph" *ngIf="educaciones[0].estado == false">Completado</p>
+                        <button id="btn-edit-8" class="btn-edit" (click)="onEdit('section-educ1-p2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-8" class="btn-edit" (click)="onRemove('section-educ1-p2')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                    <div>
+                        <p id="section-educ1-p3" class="section-educ-paragraph">{{educaciones[0]['añoInicio']}} - {{educaciones[0]['añoFin']}}</p>
+                        <button id="btn-edit-9" class="btn-edit" (click)="onEdit('section-educ1-p3')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-9" class="btn-edit" (click)="onRemove('section-educ1-p3')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                    <div>
+                        <p id="section-educ1-p4" class="section-educ-paragraph">Institución: {{educaciones[0].nombreInstitucion}}</p>
+                        <button id="btn-edit-10" class="btn-edit" (click)="onEdit('section-educ1-p4')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-10" class="btn-edit" (click)="onRemove('section-educ1-p4')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                </div>
+                <!-- Educacion 2 -->
+                <div class="section-educ-1" style="width: 600px; display: inline-block;">
+                    <p id="section-educ1-p5" class="section-educ-title">{{educaciones[1].nombreCarrera}}</p>
+                    <button id="btn-edit-11" class="btn-edit" (click)="onEdit('section-educ1-p5')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    <button id="btn-remove-11" class="btn-edit" (click)="onRemove('section-educ1-p5')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    <hr>
+                    <div>
+                        <p id="section-educ1-p6" class="section-educ-paragraph" *ngIf="educaciones[1].estado == true">En curso</p>
+                        <p id="section-educ1-p6" class="section-educ-paragraph" *ngIf="!educaciones[1].estado == true">Completado</p>
+                        <button id="btn-edit-12" class="btn-edit" (click)="onEdit('section-educ1-p6')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-12" class="btn-edit" (click)="onRemove('section-educ1-p6')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                    <div>
+                        <p id="section-educ1-p7" class="section-educ-paragraph">{{educaciones[1]['añoInicio']}} - {{educaciones[1]['añoFin']}}</p>
+                        <button id="btn-edit-13" class="btn-edit" (click)="onEdit('section-educ1-p7')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-13" class="btn-edit" (click)="onRemove('section-educ1-p7')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                    <div>
+                        <a id="section-educ1-p8" class="section-educ-paragraph link" href="https://www.frgp.utn.edu.ar/" target="_blank">
+                            <img src="../assets/utn-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 110px;">
+                            <p class="section-educ-place">Institución: {{educaciones[1].nombreInstitucion}}</p>
+                        </a>
+                        <button id="btn-edit-14" class="btn-edit" (click)="onEdit('section-educ1-p8')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-14" class="btn-edit" (click)="onRemove('section-educ1-p8')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                </div>
+            </section>
+        
+            <section>
+                <!-- Educacion 3 -->
+                <div class="section-educ-1" style="width: 600px; display: inline-block;">
+                    <p id="section-educ1-p9" class="section-educ-title">{{educaciones[2].nombreCarrera}}</p>
+                    <button id="btn-edit-15" class="btn-edit" (click)="onEdit('section-educ1-p9')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    <button id="btn-remove-15" class="btn-edit" (click)="onRemove('section-educ1-p9')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    <hr>
+                    <div>
+                        <p id="section-educ1-p10" class="section-educ-paragraph" *ngIf="educaciones[2].estado == true">En curso</p>
+                        <p id="section-educ1-p10" class="section-educ-paragraph" *ngIf="!educaciones[2].estado == true">Completado</p>
+                        <button id="btn-edit-16" class="btn-edit" (click)="onEdit('section-educ1-p10')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-16" class="btn-edit" (click)="onRemove('section-educ1-p10')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                    <div>
+                        <p id="section-educ1-p11" class="section-educ-paragraph">{{educaciones[2]['añoInicio']}} - {{educaciones[2]['añoFin']}}</p>
+                        <button id="btn-edit-17" class="btn-edit" (click)="onEdit('section-educ1-p11')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-17" class="btn-edit" (click)="onRemove('section-educ1-p11')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                    <div>
+                        <a id="section-educ1-p12" class="section-educ-paragraph link" href="http://www.idiomas.filo.uba.ar/" target="_blank">
+                            <img src="../assets/uba-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 180px;">
+                            <p class="section-educ-place">Institución: {{educaciones[2].nombreInstitucion}}</p>
+                        </a>
+                        <button id="btn-edit-18" class="btn-edit" (click)="onEdit('section-educ1-p12')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-18" class="btn-edit" (click)="onRemove('section-educ1-p12')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                </div>
+
+                <!-- Educacion 4 -->
+                <div class="section-educ-1" style="width: 600px; display: inline-block; margin-bottom: 40px;">
+                    <p id="section-educ1-p13" class="section-educ-title">{{educaciones[3].nombreCarrera}}</p>
+                    <button id="btn-edit-19" class="btn-edit" (click)="onEdit('section-educ1-p13')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                    <button id="btn-remove-19" class="btn-edit" (click)="onRemove('section-educ1-p13')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    <hr>
+                    <div>
+                        <p id="section-educ1-p14" class="section-educ-paragraph" *ngIf="educaciones[3].estado == true">En curso</p>
+                        <p id="section-educ1-p14" class="section-educ-paragraph" *ngIf="!educaciones[3].estado == true">Completado</p>
+                        <button id="btn-edit-20" class="btn-edit" (click)="onEdit('section-educ1-p14')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-20" class="btn-edit" (click)="onRemove('section-educ1-p14')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                    <div>
+                        <p id="section-educ1-p15" class="section-educ-paragraph">{{educaciones[3]['añoInicio']}} - {{educaciones[3]['añoFin']}}</p>
+                        <button id="btn-edit-21" class="btn-edit" (click)="onEdit('section-educ1-p15')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-21" class="btn-edit" (click)="onRemove('section-educ1-p15')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                    <div>
+                        <a id="section-educ1-p16" class="section-educ-paragraph link" href="http://www.idiomas.filo.uba.ar/" target="_blank">
+                            <img src="../assets/uba-logo.png" class="section-educ-logo" alt="utn-logo" style="margin-right: 180px;">
+                            <p class="section-educ-place">Institución: {{educaciones[3].nombreInstitucion}}</p>
+                        </a>
+                        <button id="btn-edit-22" class="btn-edit" (click)="onEdit('section-educ1-p16')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                        <button id="btn-remove-22" class="btn-edit" (click)="onRemove('section-educ1-p16')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Sección Skills -->
+        <section id="section-skills" class="container-fluid">
+            <h3 id="section-skills-title">Tecnologías</h3>
+            <div>
+                <!-- HTML -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-1">
+                                <div class="fill-1"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-1"></div>
+                            </div>
+                            <div class="inside-circle">{{tecnologias[0].nivel}}</div>
+                        </div>
+                        <h4 class="circle-name">{{tecnologias[0].nombreTecnologia}}</h4>
+                    </div>
+                </div>
+                <!-- CSS -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-2">
+                                <div class="fill-2"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-2"></div>
+                            </div>
+                            <div class="inside-circle">{{tecnologias[1].nivel}}</div>
+                        </div>
+                        <h4 class="circle-name">{{tecnologias[1].nombreTecnologia}}</h4>
+                    </div>
+                </div>
+                <!-- JS -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-3">
+                                <div class="fill-3"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-3"></div>
+                            </div>
+                            <div class="inside-circle">{{tecnologias[2].nivel}}</div>
+                        </div>
+                        <h4 class="circle-name">{{tecnologias[2].nombreTecnologia}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- TS -->
+                <div class="circle-card" style="margin-bottom: 40px;">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-4">
+                                <div class="fill-4"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-4"></div>
+                            </div>
+                            <div class="inside-circle">{{tecnologias[3].nivel}}</div>
+                        </div>
+                        <h4 class="circle-name">{{tecnologias[3].nombreTecnologia}}</h4>
+                    </div>
+                </div>
+                <!-- Angular -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-5">
+                                <div class="fill-5"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-5"></div>
+                            </div>
+                            <div class="inside-circle">{{tecnologias[4].nivel}}</div>
+                        </div>
+                        <h4 class="circle-name">{{tecnologias[4].nombreTecnologia}}</h4>
+                    </div>
+                </div>
+                <!-- Java -->
+                <div class="circle-card">
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full-6">
+                                <div class="fill-6"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill-6"></div>
+                            </div>
+                            <div class="inside-circle">{{tecnologias[5].nivel}}</div>
+                        </div>
+                        <h4 class="circle-name">{{tecnologias[5].nombreTecnologia}}</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="section-projects" class="container-fluid">
+            <h3 id="section-projects-title">Proyectos</h3>
+            <a id="link-project1" class="link" href="https://github.com/carlo-renosto/portfolio-FrontEnd" target="_blank">
+                <section id="section-projects-1">
+                    <h5 id="project1-nombre">{{proyectos[0].nombre}}</h5>
+                    <img src="../assets/argprograma.png" id="section-projects-logo">
+                    <p id="project1-desc"><br>{{proyectos[0].descripcion}}</p>
+                    <hr>
+                    <p id="project1-fecha">Fecha de realización: {{proyectos[0].fechaRealizacion}}</p>  
+                </section>
+            </a>
+            <button id="btn-edit-23" class="btn-edit-project" (click)="onEditProject('section-projects-1', 'project1-nombre', 'project1-desc', 'project1-fecha', 'link-project1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <a id="link-project2" class="link" href="https://github.com/carlo-renosto/app-clinica" target="_blank">
+                <section id="section-projects-2">
+                    <h5 id="project2-nombre">{{proyectos[1].nombre}}</h5>
+                    <img src="../assets/argprograma.png" id="section-projects-logo">
+                    <p id="project2-desc"><br>{{proyectos[1].descripcion}}</p>
+                    <hr>
+                    <p id="project2-fecha">Fecha de realización: {{proyectos[1].fechaRealizacion}}</p>  
+                </section>
+            </a>
+            <button id="btn-edit-24" class="btn-edit-project" (click)="onEditProject('section-projects-2', 'project2-nombre', 'project2-desc', 'project2-fecha', 'link-project2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+        </section>
+    </section>
+</section>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,436 @@
+
+h3 {
+    margin-left: 70px;
+}
+
+#section-root {
+    display: block;
+}
+
+#banner {
+    position: relative;
+    max-width: 90%;
+    margin-top: 30px;
+    margin-left: 60px; 
+    border-radius: 20px;
+}
+
+#profile {
+    width: 350px;
+}
+
+#profile-pic {
+    display: inline-block;
+    position: relative;
+    width: 150px; 
+    min-height: 140px;
+    max-height: 140px; 
+    border: 2px solid #004D90;
+    border-radius: 50%; 
+}
+
+#name {
+    width: fit-content;
+}
+
+#name-text { 
+    display: inline-block;
+    margin-left: 150px;
+}
+
+#shortdesc {
+    width: fit-content;
+    position: relative;
+    margin-left: 150px;
+    bottom: 40px;
+    font-family: Arial;
+}
+
+#desc {
+    display: inline-block;
+}
+
+#location {
+    width: fit-content;
+    position: relative;
+    margin-left: 150px;
+    bottom: 40px;
+    font-family: Arial;
+}
+
+#loc {
+    display: inline-block;
+}
+
+#button-show {
+    display: none;
+    margin-left: 70px;
+    margin-bottom: 20px;
+}
+
+#button-hide {
+    display: none;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#section-1 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: 2px solid #004D90;
+    border-radius: 25px;
+}
+
+#section-1-title {
+    margin-top: 30px;
+    margin-left: 70px;
+}
+
+#section-1-desc {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 70px;
+    margin-bottom: 40px;
+}
+
+.section-exp {
+    margin-bottom: 30px;
+    border: 2px solid #004D90;
+    border-radius: 25px;
+}
+
+#section-exp-title {
+    margin-bottom: 20px;
+}
+
+#section-exp-desc {
+    display: inline-block;
+    margin-left: 70px;
+    margin-bottom: 40px;
+}
+
+#section-educ {
+    margin-bottom: 30px;
+    border: 2px solid #004D90;
+    border-radius: 25px;
+}
+
+#section-educ-title {
+    margin-top: 40px;
+}
+
+.section-educ-1 {
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 65px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #004D90;
+    box-shadow: 1px 1px #004D90;
+    background: #005EB0;
+}
+
+.section-educ-title {
+    display: inline-block;
+}
+
+.section-educ-paragraph {
+    display: inline-block;
+}
+
+.section-educ-place {
+    display: inline-block;
+}
+
+.section-educ-place:hover {
+    transition: color .1.5s;
+    color: #00A6FF;
+}
+
+.section-educ-logo:hover ~ .section-educ-place{
+    transition: color .1.5s;
+    color: #00A6FF;
+}
+
+.section-educ-logo {
+    float: right;
+}
+
+#section-skills {
+    margin-bottom: 30px;
+    border: 2px solid #004D90;
+    border-radius: 25px;
+}
+
+#section-skills-title {
+    margin-top: 40px;
+}
+
+#section-projects {
+    display: inline-block;
+    margin-bottom: 30px;
+    border: 2px solid #004D90;
+    border-radius: 25px;
+}
+
+#section-projects-title {
+    margin-top: 40px;
+}
+
+#section-projects-1, #section-projects-2 {
+    width: fit-content;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 65px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #004D90;
+    box-shadow: 5px 10px #004D90;
+    background: #005EB0;
+}
+
+#section-projects-1:hover, #section-projects-2:hover {
+    border: 2px solid #0085CD;
+    transition: box-shadow .1s;
+    box-shadow: 5px 10px #0085CD;
+    background: #0099EC;
+}
+
+#section-projects-logo {
+    position: relative;
+    float: right;
+    bottom: 40px;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.item_center {
+    margin: auto;
+    width: fit-content;
+}
+
+.border_round {
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.paragraph_align {
+    width: fit-content;
+    margin-left: 65px; 
+    margin-top: 20px; 
+    box-shadow: 5px 5px;
+}
+
+/* Botones (Edición) */
+
+.btn-edit {
+    display: none;
+    position: relative;
+    float: right;
+    border: 0px;
+    background-color: transparent; 
+}
+
+.btn-edit-project {
+    display: none;
+    border: 0px;
+    background-color: transparent;
+}
+
+#btn-edit-1 {
+    top: 70px;
+}
+
+/* Porcentajes */
+
+.circle-card {
+    width: fit-content;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 65px;
+    border: 1px solid #004D90;
+    border-radius: 20px;
+    box-shadow:  1px 1px #004D90;
+    background: #005EB0;
+}
+
+.circle-name {
+    margin-top: 150px; 
+    text-align: center;
+}
+
+.circle-wrap {
+    width: 150px;
+    height: 150px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 50px;
+    display: inline-block;
+    border-radius: 50%;
+    background: white;
+  }
+
+.circle-wrap .circle .mask, 
+.circle-wrap .circle .fill-1,
+.circle-wrap .circle .fill-2,
+.circle-wrap .circle .fill-3, 
+.circle-wrap .circle .fill-4,
+.circle-wrap .circle .fill-5,
+.circle-wrap .circle .fill-6 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+    clip: rect(0px, 150px, 150px, 75px);
+}
+
+/* Circulo 1 */
+.mask .fill-1 {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: aqua;
+}
+
+.mask.full-1,
+.circle .fill-1 {
+    animation: fill-1 ease-in-out 1.5s;
+    transform: rotate(135deg);
+}
+
+@keyframes fill-1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(135deg);
+    }
+}
+
+/* Circulo 2 */
+.mask .fill-2 {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: aqua;
+}
+
+.mask.full-2,
+.circle .fill-2 {
+    animation: fill-2 ease-in-out 1.5s;
+    transform: rotate(135deg);
+}
+
+@keyframes fill-2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(135deg);
+    }
+}
+
+/* Circulo 3 */
+.mask .fill-3 {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: aqua;
+}
+
+.mask.full-3,
+.circle .fill-3 {
+    animation: fill-3 ease-in-out 1.5s;
+    transform: rotate(126deg);
+}
+
+@keyframes fill-3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(126deg);
+    }
+}
+
+/* Circulo 4 */
+.mask .fill-4 {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: aqua;
+}
+
+.mask.full-4,
+.circle .fill-4 {
+    animation: fill-4 ease-in-out 1.5s;
+    transform: rotate(126deg);
+}
+
+@keyframes fill-4 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(126deg);
+    }
+}
+
+/* Circulo 5 */
+.mask .fill-5 {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: aqua;
+}
+
+.mask.full-5,
+.circle .fill-5 {
+    animation: fill-5 ease-in-out 1.5s;
+    transform: rotate(108deg);
+}
+
+@keyframes fill-5 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(108deg);
+    }
+}
+
+/* Circulo 6 */
+.mask .fill-6 {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: aqua;
+}
+
+.mask.full-6,
+.circle .fill-6 {
+    animation: fill-6 ease-in-out 1.5s;
+    transform: rotate(126deg);
+}
+
+@keyframes fill-6 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(126deg);
+    }
+}
+
+.inside-circle {
+    position: absolute;
+    width: 124px;
+    height: 124px;
+    margin-top: 13px;
+    margin-left: 13px;
+    background: #005EB0;
+    line-height: 120px;
+    z-index: 100;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2em;
+    color: white;
+    border-radius: 50%;
+}
+
