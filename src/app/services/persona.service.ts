@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class PersonaService {
-    personas:Persona[] = [];
     constructor(private http:HttpClient) { 
     }
 

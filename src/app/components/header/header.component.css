@@ -54,3 +54,11 @@ a {
     left: 15px;
     bottom: 31px;
 }
+
+.login {
+    background-color: #F20707;
+}
+
+.logout {
+    background-color: #0275D8;
+}

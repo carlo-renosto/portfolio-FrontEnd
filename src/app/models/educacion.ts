@@ -1,22 +1,78 @@
 
 export class Educacion {
-    id:number;
-    idInstitucion:number;
-    idPersona:number;
-    nombreInstitucion:string;
-    nombreCarrera:string;
-    añoInicio:number;
-    añoFin:number;
-    estado:boolean;
+    private _id: number;
+    private _idInstitucion: number;
+    private _idPersona: number;
+    private _nombreInstitucion: string;
+    private _nombreCarrera: string;
+    private _añoInicio: number;
+    private _añoFin: number;
+    private _estado: boolean;
 
     constructor(id:number=0, idInstitucion:number=0, idPersona:number=0, nombreInstitucion:string="", nombreCarrera:string="", añoInicio:number=0, añoFin:number=0, estado:boolean=false) { 
-        this.id = id;
-        this.idInstitucion = idInstitucion;
-        this.idPersona = idPersona;
-        this.nombreInstitucion = nombreInstitucion; 
-        this.nombreCarrera = nombreCarrera;
-        this.añoInicio = añoInicio;
-        this.añoFin = añoFin;
-        this.estado = estado;
+        this._id = id;
+        this._idInstitucion = idInstitucion;
+        this._idPersona = idPersona;
+        this._nombreInstitucion = nombreInstitucion; 
+        this._nombreCarrera = nombreCarrera;
+        this._añoInicio = añoInicio;
+        this._añoFin = añoFin;
+        this._estado = estado;
+    }
+
+    get id(): number {
+        return this._id;
+    }
+    set id(id: number) {
+        this._id = id;
+    }
+
+    get idInstitucion(): number {
+        return this._idInstitucion;
+    }
+    set idInstitucion(idInstitucion) {
+        this._idInstitucion = idInstitucion;
+    }
+
+    get idPersona(): number {
+        return this._idPersona;
+    }
+    set idPersona(idPersona) {
+        this._idPersona = idPersona;
+    }
+
+    get nombreInstitucion(): string {
+        return this._nombreInstitucion;
+    }
+    set nombreInstitucion(nombreInstitucion) {
+        this._nombreInstitucion = nombreInstitucion;
+    }
+
+    get nombreCarrera(): string {
+        return this._nombreCarrera;
+    }
+    set nombreCarrera(nombreCarrera) {
+        this._nombreCarrera = nombreCarrera;
+    }
+
+    get añoInicio(): number {
+        return this._añoInicio;
+    }
+    set añoInicio(añoInicio) {
+        this._añoInicio = añoInicio;
+    }
+
+    get añoFin(): number {
+        return this._añoFin;
+    }
+    set añoFin(añoFin) {
+        this._añoFin = añoFin;
+    }
+
+    get estado(): boolean {
+        return this._estado;
+    }
+    set estado(estado) {
+        this._estado = estado;
     }
 }

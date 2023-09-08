@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class ProyectoService {
-    proyectos:Proyecto[] = [];
     constructor(private http:HttpClient) { }
 
     getProyectos():Observable<Proyecto[]> {

@@ -15,6 +15,8 @@ h3 {
     border-radius: 20px;
 }
 
+/* Perfil */
+
 #profile {
     width: 350px;
 }
@@ -74,6 +76,8 @@ h3 {
     margin-bottom: 20px;
 }
 
+/* Seccion 1 */
+
 #section-1 {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -93,6 +97,8 @@ h3 {
     margin-bottom: 40px;
 }
 
+/* Seccion experiencia */
+
 .section-exp {
     margin-bottom: 30px;
     border: 2px solid #004D90;
@@ -109,6 +115,8 @@ h3 {
     margin-bottom: 40px;
 }
 
+/* Seccion educacion */
+
 #section-educ {
     margin-bottom: 30px;
     border: 2px solid #004D90;
@@ -117,6 +125,7 @@ h3 {
 
 #section-educ-title {
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .section-educ-1 {
@@ -156,6 +165,8 @@ h3 {
     float: right;
 }
 
+/* Seccion skills */
+
 #section-skills {
     margin-bottom: 30px;
     border: 2px solid #004D90;
@@ -164,7 +175,10 @@ h3 {
 
 #section-skills-title {
     margin-top: 40px;
+    margin-bottom: 40px;
 }
+
+/* Seccion proyectos */
 
 #section-projects {
     display: inline-block;
@@ -175,6 +189,7 @@ h3 {
 
 #section-projects-title {
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #section-projects-1, #section-projects-2 {
@@ -235,14 +250,26 @@ h3 {
     background-color: transparent; 
 }
 
-.btn-edit-project {
+#btn-edit-1 {
+    top: 70px;
+}
+
+.btn-edit-skill {
     display: none;
+    margin-left: auto;
+    margin-right: auto;
     border: 0px;
     background-color: transparent;
 }
 
-#btn-edit-1 {
-    top: 70px;
+.btn-edit-project {
+    display: none;
+    position: relative;
+    float: right;
+    top: 40px;
+    left: 20px;
+    border: 0px;
+    background-color: transparent;
 }
 
 /* Porcentajes */

@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class ExperienciaService {
-    experiencias:Experiencia[] = [];
     constructor(private http:HttpClient) { 
     }
 

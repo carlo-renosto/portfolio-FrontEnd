@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class TecnologiaService {
-    tecnologias:Tecnologia[] = [];
     constructor(private http:HttpClient) { 
     }
 

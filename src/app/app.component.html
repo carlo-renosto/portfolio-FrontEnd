@@ -56,14 +56,14 @@
             <h3 id="section-educ-title">Educación</h3>
             <section>
                 <!-- Educacion 1 -->
-                <div class="section-educ-1" style="width: 600px; display: inline-block;">
+                <div class="section-educ-1" style="width: 600px; display: inline-block;" *ngIf="educaciones[0].id != null">
                     <p id="section-educ1-p1" class="section-educ-title">{{educaciones[0].nombreCarrera}}</p>
                     <button id="btn-edit-7" class="btn-edit" (click)="onEdit('section-educ1-p1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     <button id="btn-remove-7" class="btn-edit" (click)="onRemove('section-educ1-p1')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
                     <hr>
                     <div>
-                        <p id="section-educ1-p2" class="section-educ-paragraph" *ngIf="educaciones[0].estado == true">En curso</p>
-                        <p id="section-educ1-p2" class="section-educ-paragraph" *ngIf="educaciones[0].estado == false">Completado</p>
+                        <p id="section-educ1-p2" class="section-educ-paragraph" *ngIf="educaciones[0].estado == false">En curso</p>
+                        <p id="section-educ1-p2" class="section-educ-paragraph" *ngIf="educaciones[0].estado == true">Completado</p>
                         <button id="btn-edit-8" class="btn-edit" (click)="onEdit('section-educ1-p2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                         <button id="btn-remove-8" class="btn-edit" (click)="onRemove('section-educ1-p2')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
                     </div>
@@ -79,14 +79,14 @@
                     </div>
                 </div>
                 <!-- Educacion 2 -->
-                <div class="section-educ-1" style="width: 600px; display: inline-block;">
+                <div class="section-educ-1" style="width: 600px; display: inline-block;" *ngIf="educaciones[1].id != null">
                     <p id="section-educ1-p5" class="section-educ-title">{{educaciones[1].nombreCarrera}}</p>
                     <button id="btn-edit-11" class="btn-edit" (click)="onEdit('section-educ1-p5')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     <button id="btn-remove-11" class="btn-edit" (click)="onRemove('section-educ1-p5')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
                     <hr>
                     <div>
-                        <p id="section-educ1-p6" class="section-educ-paragraph" *ngIf="educaciones[1].estado == true">En curso</p>
-                        <p id="section-educ1-p6" class="section-educ-paragraph" *ngIf="!educaciones[1].estado == true">Completado</p>
+                        <p id="section-educ1-p6" class="section-educ-paragraph" *ngIf="educaciones[1].estado == false">En curso</p>
+                        <p id="section-educ1-p6" class="section-educ-paragraph" *ngIf="educaciones[1].estado == true">Completado</p>
                         <button id="btn-edit-12" class="btn-edit" (click)="onEdit('section-educ1-p6')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                         <button id="btn-remove-12" class="btn-edit" (click)="onRemove('section-educ1-p6')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
                     </div>
@@ -108,14 +108,14 @@
         
             <section>
                 <!-- Educacion 3 -->
-                <div class="section-educ-1" style="width: 600px; display: inline-block;">
+                <div class="section-educ-1" style="width: 600px; display: inline-block;" *ngIf="educaciones[2].id != null">
                     <p id="section-educ1-p9" class="section-educ-title">{{educaciones[2].nombreCarrera}}</p>
                     <button id="btn-edit-15" class="btn-edit" (click)="onEdit('section-educ1-p9')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     <button id="btn-remove-15" class="btn-edit" (click)="onRemove('section-educ1-p9')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
                     <hr>
                     <div>
-                        <p id="section-educ1-p10" class="section-educ-paragraph" *ngIf="educaciones[2].estado == true">En curso</p>
-                        <p id="section-educ1-p10" class="section-educ-paragraph" *ngIf="!educaciones[2].estado == true">Completado</p>
+                        <p id="section-educ1-p10" class="section-educ-paragraph" *ngIf="educaciones[2].estado == false">En curso</p>
+                        <p id="section-educ1-p10" class="section-educ-paragraph" *ngIf="educaciones[2].estado == true">Completado</p>
                         <button id="btn-edit-16" class="btn-edit" (click)="onEdit('section-educ1-p10')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                         <button id="btn-remove-16" class="btn-edit" (click)="onRemove('section-educ1-p10')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
                     </div>
@@ -135,14 +135,14 @@
                 </div>
 
                 <!-- Educacion 4 -->
-                <div class="section-educ-1" style="width: 600px; display: inline-block; margin-bottom: 40px;">
+                <div class="section-educ-1" style="width: 600px; display: inline-block; margin-bottom: 40px;" *ngIf="educaciones[3].id != null">
                     <p id="section-educ1-p13" class="section-educ-title">{{educaciones[3].nombreCarrera}}</p>
                     <button id="btn-edit-19" class="btn-edit" (click)="onEdit('section-educ1-p13')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     <button id="btn-remove-19" class="btn-edit" (click)="onRemove('section-educ1-p13')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
                     <hr>
                     <div>
-                        <p id="section-educ1-p14" class="section-educ-paragraph" *ngIf="educaciones[3].estado == true">En curso</p>
-                        <p id="section-educ1-p14" class="section-educ-paragraph" *ngIf="!educaciones[3].estado == true">Completado</p>
+                        <p id="section-educ1-p14" class="section-educ-paragraph" *ngIf="educaciones[3].estado == false">En curso</p>
+                        <p id="section-educ1-p14" class="section-educ-paragraph" *ngIf="educaciones[3].estado == true">Completado</p>
                         <button id="btn-edit-20" class="btn-edit" (click)="onEdit('section-educ1-p14')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                         <button id="btn-remove-20" class="btn-edit" (click)="onRemove('section-educ1-p14')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
                     </div>
@@ -168,7 +168,7 @@
             <h3 id="section-skills-title">Tecnologías</h3>
             <div>
                 <!-- HTML -->
-                <div class="circle-card">
+                <div class="circle-card" *ngIf="tecnologias[0].idTecnologia != null">
                     <div class="circle-wrap">
                         <div class="circle">
                             <div class="mask full-1">
@@ -177,13 +177,15 @@
                             <div class="mask half">
                                 <div class="fill-1"></div>
                             </div>
-                            <div class="inside-circle">{{tecnologias[0].nivel}}</div>
+                            <div id="circle-perc-1" class="inside-circle">{{tecnologias[0].nivel}}</div>
                         </div>
-                        <h4 class="circle-name">{{tecnologias[0].nombreTecnologia}}</h4>
+                        <h4 id="circle-name-1" class="circle-name">{{tecnologias[0].nombreTecnologia}}</h4>
+                        <button id="btn-remove-23" class="btn-edit-skill" (click)="onRemoveSkill('circle-perc-1', 'circle-name-1')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                        <button id="btn-edit-23" class="btn-edit-skill" (click)="onEditSkill('circle-perc-1', 'circle-name-1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
                 </div>
                 <!-- CSS -->
-                <div class="circle-card">
+                <div class="circle-card" *ngIf="tecnologias[1].idTecnologia != null">
                     <div class="circle-wrap">
                         <div class="circle">
                             <div class="mask full-2">
@@ -192,13 +194,15 @@
                             <div class="mask half">
                                 <div class="fill-2"></div>
                             </div>
-                            <div class="inside-circle">{{tecnologias[1].nivel}}</div>
+                            <div id="circle-perc-2" class="inside-circle">{{tecnologias[1].nivel}}</div>
                         </div>
-                        <h4 class="circle-name">{{tecnologias[1].nombreTecnologia}}</h4>
+                        <h4 id="circle-name-2" class="circle-name">{{tecnologias[1].nombreTecnologia}}</h4>
+                        <button id="btn-remove-24" class="btn-edit-skill" (click)="onRemoveSkill('circle-perc-2', 'circle-name-2')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                        <button id="btn-edit-24" class="btn-edit-skill" (click)="onEditSkill('circle-perc-2', 'circle-name-2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
                 </div>
                 <!-- JS -->
-                <div class="circle-card">
+                <div class="circle-card" *ngIf="tecnologias[2].idTecnologia != null">
                     <div class="circle-wrap">
                         <div class="circle">
                             <div class="mask full-3">
@@ -207,15 +211,17 @@
                             <div class="mask half">
                                 <div class="fill-3"></div>
                             </div>
-                            <div class="inside-circle">{{tecnologias[2].nivel}}</div>
+                            <div id="circle-perc-3" class="inside-circle">{{tecnologias[2].nivel}}</div>
                         </div>
-                        <h4 class="circle-name">{{tecnologias[2].nombreTecnologia}}</h4>
+                        <h4 id="circle-name-3" class="circle-name">{{tecnologias[2].nombreTecnologia}}</h4>
+                        <button id="btn-remove-25" class="btn-edit-skill" (click)="onRemoveSkill('circle-perc-3', 'circle-name-3')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                        <button id="btn-edit-25" class="btn-edit-skill" (click)="onEditSkill('circle-perc-3', 'circle-name-3')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
                 </div>
             </div>
             <div>
                 <!-- TS -->
-                <div class="circle-card" style="margin-bottom: 40px;">
+                <div class="circle-card" style="margin-bottom: 40px;" *ngIf="tecnologias[3].idTecnologia != null">
                     <div class="circle-wrap">
                         <div class="circle">
                             <div class="mask full-4">
@@ -224,13 +230,15 @@
                             <div class="mask half">
                                 <div class="fill-4"></div>
                             </div>
-                            <div class="inside-circle">{{tecnologias[3].nivel}}</div>
+                            <div id="circle-perc-4" class="inside-circle">{{tecnologias[3].nivel}}</div>
                         </div>
-                        <h4 class="circle-name">{{tecnologias[3].nombreTecnologia}}</h4>
+                        <h4 id="circle-name-4" class="circle-name">{{tecnologias[3].nombreTecnologia}}</h4>
+                        <button id="btn-remove-26" class="btn-edit-skill" (click)="onRemoveSkill('circle-perc-4', 'circle-name-4')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                        <button id="btn-edit-26" class="btn-edit-skill" (click)="onEditSkill('circle-perc-4', 'circle-name-4')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
                 </div>
                 <!-- Angular -->
-                <div class="circle-card">
+                <div class="circle-card" *ngIf="tecnologias[4].idTecnologia != null">
                     <div class="circle-wrap">
                         <div class="circle">
                             <div class="mask full-5">
@@ -239,13 +247,15 @@
                             <div class="mask half">
                                 <div class="fill-5"></div>
                             </div>
-                            <div class="inside-circle">{{tecnologias[4].nivel}}</div>
+                            <div id="circle-perc-5" class="inside-circle">{{tecnologias[4].nivel}}</div>
                         </div>
-                        <h4 class="circle-name">{{tecnologias[4].nombreTecnologia}}</h4>
+                        <h4 id="circle-name-5" class="circle-name">{{tecnologias[4].nombreTecnologia}}</h4>
+                        <button id="btn-remove-27" class="btn-edit-skill" (click)="onRemoveSkill('circle-perc-5', 'circle-name-5')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                        <button id="btn-edit-27" class="btn-edit-skill" (click)="onEditSkill('circle-perc-5', 'circle-name-5')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
                 </div>
                 <!-- Java -->
-                <div class="circle-card">
+                <div class="circle-card" *ngIf="tecnologias[5].idTecnologia != null">
                     <div class="circle-wrap">
                         <div class="circle">
                             <div class="mask full-6">
@@ -254,9 +264,11 @@
                             <div class="mask half">
                                 <div class="fill-6"></div>
                             </div>
-                            <div class="inside-circle">{{tecnologias[5].nivel}}</div>
+                            <div id="circle-perc-6" class="inside-circle" class="inside-circle">{{tecnologias[5].nivel}}</div>
                         </div>
-                        <h4 class="circle-name">{{tecnologias[5].nombreTecnologia}}</h4>
+                        <h4 id="circle-name-6" class="circle-name">{{tecnologias[5].nombreTecnologia}}</h4>
+                        <button id="btn-remove-28" class="btn-edit-skill" (click)="onRemoveSkill('circle-perc-6', 'circle-name-6')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                        <button id="btn-edit-28" class="btn-edit-skill" (click)="onEditSkill('circle-perc-6', 'circle-name-6')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
                     </div>
                 </div>
             </div>
@@ -265,26 +277,32 @@
         <!-- Sección Proyectos -->
         <section id="section-projects" class="container-fluid">
             <h3 id="section-projects-title">Proyectos</h3>
-            <a id="link-project1" class="link" href="https://github.com/carlo-renosto/portfolio-FrontEnd" target="_blank">
-                <section id="section-projects-1">
-                    <h5 id="project1-nombre">{{proyectos[0].nombre}}</h5>
-                    <img src="../assets/argprograma.png" id="section-projects-logo">
-                    <p id="project1-desc"><br>{{proyectos[0].descripcion}}</p>
-                    <hr>
-                    <p id="project1-fecha">Fecha de realización: {{proyectos[0].fechaRealizacion}}</p>  
-                </section>
-            </a>
-            <button id="btn-edit-23" class="btn-edit-project" (click)="onEditProject('section-projects-1', 'project1-nombre', 'project1-desc', 'project1-fecha', 'link-project1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-            <a id="link-project2" class="link" href="https://github.com/carlo-renosto/app-clinica" target="_blank">
-                <section id="section-projects-2">
-                    <h5 id="project2-nombre">{{proyectos[1].nombre}}</h5>
-                    <img src="../assets/argprograma.png" id="section-projects-logo">
-                    <p id="project2-desc"><br>{{proyectos[1].descripcion}}</p>
-                    <hr>
-                    <p id="project2-fecha">Fecha de realización: {{proyectos[1].fechaRealizacion}}</p>  
-                </section>
-            </a>
-            <button id="btn-edit-24" class="btn-edit-project" (click)="onEditProject('section-projects-2', 'project2-nombre', 'project2-desc', 'project2-fecha', 'link-project2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <section style="width: fit-content;">
+                <a id="link-project1" class="link" href="https://github.com/carlo-renosto/portfolio-FrontEnd" target="_blank" *ngIf="proyectos[0].id != null">
+                    <section id="section-projects-1">
+                        <h5 id="project1-nombre">{{proyectos[0].nombre}}</h5>
+                        <img src="../assets/argprograma.png" id="section-projects-logo">
+                        <p id="project1-desc"><br>{{proyectos[0].descripcion}}</p>
+                        <hr>
+                        <p id="project1-fecha">Fecha de realización: {{proyectos[0].fechaRealizacion}}</p>  
+                    </section>
+                </a>
+                <button id="btn-edit-29" class="btn-edit-project" (click)="onEditProject('section-projects-1', 'link-project1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-29" class="btn-edit-project" (click)="onRemoveProject('section-projects-1')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </section>
+            <section style="width: fit-content;">
+                <a id="link-project2" class="link" href="https://github.com/carlo-renosto/app-clinica" target="_blank" *ngIf="proyectos[1].id != null">
+                    <section id="section-projects-2">
+                        <h5 id="project2-nombre">{{proyectos[1].nombre}}</h5>
+                        <img src="../assets/argprograma.png" id="section-projects-logo">
+                        <p id="project2-desc"><br>{{proyectos[1].descripcion}}</p>
+                        <hr>
+                        <p id="project2-fecha">Fecha de realización: {{proyectos[1].fechaRealizacion}}</p>  
+                    </section>
+                </a>
+                <button id="btn-edit-30" class="btn-edit-project" (click)="onEditProject('section-projects-2', 'link-project2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-30" class="btn-edit-project" (click)="onRemoveProject('section-projects-2')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </section>
         </section>
     </section>
 </section>

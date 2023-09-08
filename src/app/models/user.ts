@@ -1,27 +1,42 @@
 
 export class User {
-    id:number;
-    nombre:string;
-    contra:string;
-    esAdmin:boolean;
+    private _id: number;
+    private _nombre: string;
+    private _contra: string;
+    private _esAdmin: boolean;
 
     constructor(id:number=0, nombre:string="", contra:string="", esAdmin:boolean=false) {
-        this.id = id;
-        this.nombre = nombre;
-        this.contra = contra;
-        this.esAdmin = esAdmin;
+        this._id = id;
+        this._nombre = nombre;
+        this._contra = contra;
+        this._esAdmin = esAdmin;
     }
 
-    getId():number {
-        return this.id;
+    get id(): number {
+        return this._id;
     }
-    getNombre():string {
-        return this.nombre;
+    set id(id) {
+        this._id = id;
     }
-    getContra():string {
-        return this.contra;
+
+    get nombre(): string {
+        return this._nombre;
     }
-    admin():boolean {
-        return this.esAdmin;
+    set nombre(nombre) {
+        this._nombre = nombre;
+    }
+
+    get contra(): string {
+        return this._contra;
+    }
+    set contra(contra) {
+        this._contra = contra;
+    }
+
+    get esAdmin(): boolean {
+        return this._esAdmin;
+    }
+    set esAdmin(esAdmin) {
+        this._esAdmin = esAdmin;
     }
 }

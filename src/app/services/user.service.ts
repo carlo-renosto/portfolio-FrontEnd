@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class UserService {
-    users:User[] = [];
     constructor(private http:HttpClient) { 
     } 
 
