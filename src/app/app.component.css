@@ -251,6 +251,11 @@ h3 {
 }
 
 #btn-edit-1 {
+    left: 25px;
+    top: 70px;
+}
+#btn-remove-1 {
+    left: 20px;
     top: 70px;
 }
 

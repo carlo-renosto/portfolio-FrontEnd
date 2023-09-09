@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import view  from '../../models/view'
+import view from '../../models/view'
 
 @Component({
   selector: 'app-header',

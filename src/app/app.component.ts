@@ -10,7 +10,7 @@ import { ExperienciaService } from './services/experiencia.service';
 import { Experiencia } from './models/experiencia';
 import { TecnologiaService } from './services/tecnologia.service';
 import { Tecnologia } from './models/tecnologia';
-import view  from './models/view';
+import view from './models/view';
 
 @Component({
     selector: 'app-root',
@@ -126,5 +126,27 @@ export class AppComponent implements OnInit, AfterViewInit {
         if(element != null) {
             element.style.display = "none";
         }
+    }
+
+    onUploadImage() {
+        var fileInput = document.getElementById("fileInput");
+
+        fileInput?.addEventListener('change', this.onChangeImage);
+        fileInput?.click();
+    }
+
+    onChangeImage(event: any) {
+        const file = event.target.files[0];
+        if(file) {
+            var profilePic = document.getElementById("profile-pic");
+
+            profilePic?.setAttribute("src", URL.createObjectURL(file));
+        }
+    }
+
+    onRemoveImage() {
+        var profilePic = document.getElementById("profile-pic");
+        
+        profilePic?.setAttribute("src", "../assets/perfil.png");
     }
 }

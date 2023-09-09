@@ -8,7 +8,10 @@
         <section style="position: relative; bottom: 60px;">
             <section id="profile">
                 <img src="../assets/perfil.png" id="profile-pic" class="img-fluid" alt="profile-img">
-                <!--<button id="btn-edit-1" class="btn-edit" (click)="onChangeImage('profile-pic')" type="file"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>-->
+                <input type="file" id="fileInput" style="display: none;" accept="image/jpeg, image/png">
+                <button id="btn-edit-1" class="btn-edit" (click)="onUploadImage()"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <input type="file" id="fileInput2" style="display: none;" accept="image/jpeg, image/png">
+                <button id="btn-remove-1" class="btn-edit" (click)="onRemoveImage()"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
             </section>
 
             <section id="name">
