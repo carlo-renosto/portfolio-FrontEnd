@@ -1,0 +1,110 @@
+
+<div id="sk-div" class="container-fluid" *ngIf="tecnologias && tecnologias.length > 0">
+    <h3 id="sk-title">Tecnologías</h3>
+    <div>
+        <!-- HTML -->
+        <div class="circle-card" *ngIf="tecnologias[0].idTecnologia != null">
+            <div class="circle-wrap">
+                <div class="circle">
+                    <div class="mask full-1">
+                        <div class="fill-1"></div>
+                    </div>
+                    <div class="mask half">
+                        <div class="fill-1"></div>
+                    </div>
+                    <div id="sk-ci-pe1" class="inside-circle" [attr.contenteditable]="elements[0][1] ? 'true' : 'false'">{{tecnologias[0].nivel}}</div>
+                </div>
+                <h4 id="sk-ci-na1" class="circle-name" [attr.contenteditable]="elements[0][1] ? 'true' : 'false'">{{tecnologias[0].nombreTecnologia}}</h4>
+                <button id="btn-remove-23" class="btn-edit-skill" (click)="onRemoveSkill('sk-ci-pe1', 'sk-ci-na1')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                <button id="btn-edit-23" class="btn-edit-skill" (click)="onEditSkill('sk-ci-pe1', 'sk-ci-na1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            </div>
+        </div>
+        <!-- CSS -->
+        <div class="circle-card" *ngIf="tecnologias[1].idTecnologia != null">
+            <div class="circle-wrap">
+                <div class="circle">
+                    <div class="mask full-2">
+                        <div class="fill-2"></div>
+                    </div>
+                    <div class="mask half">
+                        <div class="fill-2"></div>
+                    </div>
+                    <div id="sk-ci-pe2" class="inside-circle" [attr.contenteditable]="elements[1][1] ? 'true' : 'false'">{{tecnologias[1].nivel}}</div>
+                </div>
+                <h4 id="sk-ci-na2" class="circle-name" [attr.contenteditable]="elements[1][1] ? 'true' : 'false'">{{tecnologias[1].nombreTecnologia}}</h4>
+                <button id="btn-remove-24" class="btn-edit-skill" (click)="onRemoveSkill('sk-ci-pe2', 'sk-ci-na2')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                <button id="btn-edit-24" class="btn-edit-skill" (click)="onEditSkill('sk-ci-pe2', 'sk-ci-na2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            </div>
+        </div>
+        <!-- JS -->
+        <div class="circle-card" *ngIf="tecnologias[2].idTecnologia != null">
+            <div class="circle-wrap">
+                <div class="circle">
+                    <div class="mask full-3">
+                        <div class="fill-3"></div>
+                    </div>
+                    <div class="mask half">
+                        <div class="fill-3"></div>
+                    </div>
+                    <div id="sk-ci-pe3" class="inside-circle" [attr.contenteditable]="elements[2][1] ? 'true' : 'false'">{{tecnologias[2].nivel}}</div>
+                </div>
+                <h4 id="sk-ci-na3" class="circle-name" [attr.contenteditable]="elements[2][1] ? 'true' : 'false'">{{tecnologias[2].nombreTecnologia}}</h4>
+                <button id="btn-remove-25" class="btn-edit-skill" (click)="onRemoveSkill('sk-ci-pe3', 'sk-ci-na3')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                <button id="btn-edit-25" class="btn-edit-skill" (click)="onEditSkill('sk-ci-pe3', 'sk-ci-na3')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <!-- TS -->
+        <div class="circle-card" style="margin-bottom: 40px;" *ngIf="tecnologias[3].idTecnologia != null">
+            <div class="circle-wrap">
+                <div class="circle">
+                    <div class="mask full-4">
+                        <div class="fill-4"></div>
+                    </div>
+                    <div class="mask half">
+                        <div class="fill-4"></div>
+                    </div>
+                    <div id="sk-ci-pe4" class="inside-circle" [attr.contenteditable]="elements[3][1] ? 'true' : 'false'">{{tecnologias[3].nivel}}</div>
+                </div>
+                <h4 id="sk-ci-na4" class="circle-name" [attr.contenteditable]="elements[3][1] ? 'true' : 'false'">{{tecnologias[3].nombreTecnologia}}</h4>
+                <button id="btn-remove-26" class="btn-edit-skill" (click)="onRemoveSkill('sk-ci-pe4', 'sk-ci-na4')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                <button id="btn-edit-26" class="btn-edit-skill" (click)="onEditSkill('sk-ci-pe4', 'sk-ci-na4')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            </div>
+        </div>
+        <!-- Angular -->
+        <div class="circle-card" *ngIf="tecnologias[4].idTecnologia != null">
+            <div class="circle-wrap">
+                <div class="circle">
+                    <div class="mask full-5">
+                        <div class="fill-5"></div>
+                    </div>
+                    <div class="mask half">
+                        <div class="fill-5"></div>
+                    </div>
+                    <div id="sk-ci-pe5" class="inside-circle" [attr.contenteditable]="elements[4][1] ? 'true' : 'false'">{{tecnologias[4].nivel}}</div>
+                </div>
+                <h4 id="sk-ci-na5" class="circle-name" [attr.contenteditable]="elements[4][1] ? 'true' : 'false'">{{tecnologias[4].nombreTecnologia}}</h4>
+                <button id="btn-remove-27" class="btn-edit-skill" (click)="onRemoveSkill('sk-ci-pe5', 'sk-ci-na5')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                <button id="btn-edit-27" class="btn-edit-skill" (click)="onEditSkill('sk-ci-pe5', 'sk-ci-na5')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            </div>
+        </div>
+        <!-- Java -->
+        <div class="circle-card" *ngIf="tecnologias[5].idTecnologia != null">
+            <div class="circle-wrap">
+                <div class="circle">
+                    <div class="mask full-6">
+                        <div class="fill-6"></div>
+                    </div>
+                    <div class="mask half">
+                        <div class="fill-6"></div>
+                    </div>
+                    <div id="sk-ci-pe6" class="inside-circle" class="inside-circle" [attr.contenteditable]="elements[5][1] ? 'true' : 'false'">{{tecnologias[5].nivel}}</div>
+                </div>
+                <h4 id="sk-ci-na6" class="circle-name" [attr.contenteditable]="elements[5][1] ? 'true' : 'false'">{{tecnologias[5].nombreTecnologia}}</h4>
+                <button id="btn-remove-28" class="btn-edit-skill" (click)="onRemoveSkill('sk-ci-pe6', 'sk-ci-na6')"><img src="../assets/delete-icon.png" class="img-fluid" style="margin-left: 35px;" alt="edit-icon"></button>
+                <button id="btn-edit-28" class="btn-edit-skill" (click)="onEditSkill('sk-ci-pe6', 'sk-ci-na6')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            </div>
+        </div>
+    </div>
+</div>

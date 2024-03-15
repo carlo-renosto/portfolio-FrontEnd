@@ -1,0 +1,58 @@
+
+#ed-div-root {
+    margin-bottom: 30px;
+    border: 2px solid #004D90;
+    border-radius: 25px;
+}
+
+#ed-div-root-title {
+    margin-left: 70px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.ed-div {
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 65px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #004D90;
+    box-shadow: 1px 1px #004D90;
+    background: #005EB0;
+}
+
+.ed-title {
+    display: inline-block;
+}
+
+.ed-paragraph {
+    display: inline-block;
+}
+
+.ed-place:hover {
+    transition: color .1.5s;
+    color: #00A6FF;
+}
+
+.ed-logo {
+    float: right;
+}
+
+.ed-logo:hover ~ .ed-place{
+    transition: color .1.5s;
+    color: #00A6FF;
+}
+
+.btn-edit {
+    position: relative;
+    float: right;
+    display: none;
+    border: 0px;
+    background-color: transparent; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,39 @@
+
+<div *ngIf="personas && personas.length > 0">
+    <div class="p-banner-container">   
+        <img src="../assets/banner.png" id="p-banner" class="img-fluid" alt="banner-img">
+        <img src="../assets/perfil.png" id="p-profile-pic" class="img-fluid" alt="profile-img">
+        <input type="file" id="fileInput2" style="display: none;" accept="image/jpeg, image/png">
+        <button id="btn-remove-1" class="btn-edit" (click)="onRemoveImage()"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        <input type="file" id="fileInput" style="display: none;" accept="image/jpeg, image/png">
+        <button id="btn-edit-1" class="btn-edit" (click)="onUploadImage()"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    </div>
+    
+    <div id="p-name">
+        <h4 id="p-name-text" [attr.contenteditable]="elements[0][1] ? 'true' : 'false'">{{personas[0].nombre}} {{personas[0].apellido}}</h4>
+        <button id="btn-remove-2" class="btn-edit" (click)="onRemove('p-name-text')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        <button id="btn-edit-2" class="btn-edit" (click)="onEdit('p-name-text')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    </div>
+
+    <div id="p-desc">
+        <h6 id="p-desc-p" [attr.contenteditable]="elements[1][1] ? 'true' : 'false'">{{personas[0].edad}} años. {{personas[0].ocupacion}}</h6> 
+        <button id="btn-remove-3" class="btn-edit" (click)="onRemove('p-desc-p')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        <button id="btn-edit-3" class="btn-edit" (click)="onEdit('p-desc-p')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    </div>
+
+    <div id="p-loc">
+        <h6 id="p-loc-p" [attr.contenteditable]="elements[2][1] ? 'true' : 'false'">{{personas[0].ciudad}}, {{personas[0].pais}}</h6>
+        <button id="btn-remove-4" class="btn-edit" (click)="onRemove('p-loc-p')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        <button id="btn-edit-4" class="btn-edit" (click)="onEdit('p-loc-p')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    </div>
+
+    <button id="button-show" class="btn btn-light show-hide-buttons" (click)="onButtonShow()">Mostrar secciones</button>
+    <button id="button-hide" class="btn btn-light show-hide-buttons" (click)="onButtonHide()">Ocultar secciones</button>
+
+    <div id="a-p" class="container-fluid">
+        <h3 id="a-title">Acerca de</h3>
+        <p id="a-desc" [attr.contenteditable]="elements[3][1] ? 'true' : 'false'">{{personas[0].descripcion}}</p>
+        <button id="btn-edit-5" class="btn-edit" (click)="onEdit('a-desc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+        <button id="btn-remove-5" class="btn-edit" (click)="onRemove('a-desc')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+    </div>
+</div>

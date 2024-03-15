@@ -1,0 +1,53 @@
+
+#pr-div {
+    display: inline-block;
+    margin-bottom: 30px;
+    border: 2px solid #004D90;
+    border-radius: 25px;
+}
+
+#pr-title {
+    margin-left: 70px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#pr-logo {
+    position: relative;
+    float: right;
+}
+
+#pr-sec1, #pr-sec2 {
+    width: fit-content;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 65px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #004D90;
+    box-shadow: 5px 10px #004D90;
+    background: #005EB0;
+}
+
+#pr-sec1:hover, #pr-sec2:hover {
+    border: 2px solid #0085CD;
+    transition: box-shadow .1s;
+    box-shadow: 5px 10px #0085CD;
+    background: #0099EC;
+}
+
+.btn-edit-project {
+    display: none;
+    position: relative;
+    float: right;
+    top: 40px;
+    left: 20px;
+    border: 0px;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

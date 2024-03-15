@@ -2,7 +2,7 @@
 // Mostrar la pagina al salir del login
 function showElements() {
     var sectionMain = document.getElementById("section-main");
-    var sectionRoot = document.getElementById("section-root");
+    var sectionRoot = document.getElementById("root");
     var sectionLogin = document.getElementById("section-login");
 
     if(sectionMain != null) {
@@ -21,7 +21,7 @@ function showElements() {
 
 function showLogin() {
     var sectionMain = document.getElementById("section-main");
-    var sectionRoot = document.getElementById("section-root");
+    var sectionRoot = document.getElementById("root");
     var sectionLogin = document.getElementById("section-login");
 
     if(sectionMain != null) {
@@ -100,4 +100,4 @@ function changeViewButtons(display: string) {
     }
 }
 
-export default { showElements, showLogin };
+export default { showElements, showLogin, changeEditButtons };

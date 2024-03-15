@@ -1,0 +1,30 @@
+
+<div id="pr-div" class="container-fluid" *ngIf="proyectos && proyectos.length > 0">
+    <h3 id="pr-title">Proyectos</h3>
+    <div style="width: fit-content;">
+        <a id="pr-link1" href="https://github.com/carlo-renosto/portfolio-FrontEnd" target="_blank" *ngIf="proyectos[0].id != null">
+            <div id="pr-sec1">
+                <h5 id="pr-nombre">{{proyectos[0].nombre}}</h5>
+                <img src="../assets/argprograma.png" id="section-projects-logo">
+                <p id="pr-desc"><br>{{proyectos[0].descripcion}}</p>
+                <hr>
+                <p id="pr-fecha">Fecha de realización: {{proyectos[0].fechaRealizacion}}</p>  
+            </div>
+        </a>
+        <button id="btn-edit-29" class="btn-edit-project" (click)="onEditProject('pr-sec1', 'pr-link1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+        <button id="btn-remove-29" class="btn-edit-project" (click)="onRemoveProject('pr-sec1')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+    </div>
+    <div style="width: fit-content;">
+        <a id="pr-link2" href="https://github.com/carlo-renosto/app-clinica" target="_blank" *ngIf="proyectos[1].id != null">
+            <div id="pr-sec2">
+                <h5 id="pr2-nombre">{{proyectos[1].nombre}}</h5>
+                <img src="../assets/argprograma.png" id="section-projects-logo">
+                <p id="pr-desc"><br>{{proyectos[1].descripcion}}</p>
+                <hr>
+                <p id="pr-fecha">Fecha de realización: {{proyectos[1].fechaRealizacion}}</p>  
+            </div>
+        </a>
+        <button id="btn-edit-30" class="btn-edit-project" (click)="onEditProject('pr-sec2', 'pr-link2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+        <button id="btn-remove-30" class="btn-edit-project" (click)="onRemoveProject('pr-sec2')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+    </div>
+</div>

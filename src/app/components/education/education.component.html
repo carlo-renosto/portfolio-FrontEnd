@@ -1,0 +1,111 @@
+
+<div id="ed-div-root" class="container-fluid" *ngIf="educaciones && educaciones.length > 0">
+    <h3 id="ed-div-root-title">Educación</h3>
+    <div>
+        <!-- Educacion 1 -->
+        <div class="ed-div" style="width: 600px; display: inline-block;" *ngIf="educaciones[0].id != null">
+            <p id="ed1-p1" class="ed-title" [attr.contenteditable]="elements[0][1] ? 'true' : 'false'">{{educaciones[0].nombreCarrera}}</p>
+            <button id="btn-edit-7" class="btn-edit" (click)="onEdit('ed1-p1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button id="btn-remove-7" class="btn-edit" (click)="onRemove('ed1-p1')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            <hr>
+            <div>
+                <p id="ed1-p2" class="ed-paragraph" [attr.contenteditable]="elements[1][1] ? 'true' : 'false'" *ngIf="educaciones[0].estado == false">En curso</p>
+                <p id="ed1-p2" class="ed-paragraph" [attr.contenteditable]="elements[1][1] ? 'true' : 'false'" *ngIf="educaciones[0].estado == true">Completado</p>
+                <button id="btn-edit-8" class="btn-edit" (click)="onEdit('ed1-p2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-8" class="btn-edit" (click)="onRemove('ed1-p2')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+            <div>
+                <p id="ed1-p3" class="ed-paragraph" [attr.contenteditable]="elements[2][1] ? 'true' : 'false'">{{educaciones[0]['añoInicio']}} - {{educaciones[0]['añoFin']}}</p>
+                <button id="btn-edit-9" class="btn-edit" (click)="onEdit('ed1-p3')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-9" class="btn-edit" (click)="onRemove('ed1-p3')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+            <div>
+                <p id="ed1-p4" class="ed-paragraph" [attr.contenteditable]="elements[3][1] ? 'true' : 'false'">Institución: {{educaciones[0].nombreInstitucion}}</p>
+                <button id="btn-edit-10" class="btn-edit" (click)="onEdit('ed1-p4')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-10" class="btn-edit" (click)="onRemove('ed1-p4')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+        </div>
+        <!-- Educacion 2 -->
+        <div class="ed-div" style="width: 600px; display: inline-block;" *ngIf="educaciones[1].id != null">
+            <p id="ed1-p5" class="ed-title" [attr.contenteditable]="elements[4][1] ? 'true' : 'false'">{{educaciones[1].nombreCarrera}}</p>
+            <button id="btn-edit-11" class="btn-edit" (click)="onEdit('ed1-p5')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button id="btn-remove-11" class="btn-edit" (click)="onRemove('ed1-p5')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            <hr>
+            <div>
+                <p id="ed1-p6" class="ed-paragraph" [attr.contenteditable]="elements[5][1] ? 'true' : 'false'" *ngIf="educaciones[1].estado == false">En curso</p>
+                <p id="ed1-p6" class="ed-paragraph" [attr.contenteditable]="elements[5][1] ? 'true' : 'false'" *ngIf="educaciones[1].estado == true">Completado</p>
+                <button id="btn-edit-12" class="btn-edit" (click)="onEdit('ed1-p6')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-12" class="btn-edit" (click)="onRemove('ed1-p6')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+            <div>
+                <p id="ed1-p7" class="ed-paragraph" [attr.contenteditable]="elements[6][1] ? 'true' : 'false'">{{educaciones[1]['añoInicio']}} - {{educaciones[1]['añoFin']}}</p>
+                <button id="btn-edit-13" class="btn-edit" (click)="onEdit('ed1-p7')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-13" class="btn-edit" (click)="onRemove('ed1-p7')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+            <div>
+                <a id="ed1-p8" class="ed-paragraph" href="https://www.frgp.utn.edu.ar/" target="_blank">
+                    <img src="../assets/utn-logo.png" class="ed-logo" alt="utn-logo" style="margin-right: 110px;">
+                    <p class="ed-paragraph" [attr.contenteditable]="elements[7][1] ? 'true' : 'false'">Institución: {{educaciones[1].nombreInstitucion}}</p>
+                </a>
+                <button id="btn-edit-14" class="btn-edit" (click)="onEdit('ed1-p8')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-14" class="btn-edit" (click)="onRemove('ed1-p8')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <!-- Educacion 3 -->
+        <div class="ed-div" style="width: 600px; display: inline-block;" *ngIf="educaciones[2].id != null">
+            <p id="ed1-p9" class="ed-title" [attr.contenteditable]="elements[8][1] ? 'true' : 'false'">{{educaciones[2].nombreCarrera}}</p>
+            <button id="btn-edit-15" class="btn-edit" (click)="onEdit('ed1-p9')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button id="btn-remove-15" class="btn-edit" (click)="onRemove('ed1-p9')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            <hr>
+            <div>
+                <p id="ed1-p10" class="ed-paragraph" [attr.contenteditable]="elements[9][1] ? 'true' : 'false'" *ngIf="educaciones[2].estado == false">En curso</p>
+                <p id="ed1-p10" class="ed-paragraph" [attr.contenteditable]="elements[9][1] ? 'true' : 'false'" *ngIf="educaciones[2].estado == true">Completado</p>
+                <button id="btn-edit-16" class="btn-edit" (click)="onEdit('ed1-p10')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-16" class="btn-edit" (click)="onRemove('ed1-p10')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+            <div>
+                <p id="ed1-p11" class="ed-paragraph" [attr.contenteditable]="elements[10][1] ? 'true' : 'false'">{{educaciones[2]['añoInicio']}} - {{educaciones[2]['añoFin']}}</p>
+                <button id="btn-edit-17" class="btn-edit" (click)="onEdit('ed1-p11')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-17" class="btn-edit" (click)="onRemove('ed1-p11')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+            <div>
+                <a id="ed1-p12" class="ed-paragraph" href="http://www.idiomas.filo.uba.ar/" target="_blank">
+                    <img src="../assets/uba-logo.png" class="ed-logo" alt="uba-logo" style="margin-right: 180px;">
+                    <p class="ed-paragraph" [attr.contenteditable]="elements[11][1] ? 'true' : 'false'">Institución: {{educaciones[2].nombreInstitucion}}</p>
+                </a>
+                <button id="btn-edit-18" class="btn-edit" (click)="onEdit('ed1-p12')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-18" class="btn-edit" (click)="onRemove('ed1-p12')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+        </div>
+
+        <!-- Educacion 4 -->
+        <div class="ed-div" style="width: 600px; display: inline-block; margin-bottom: 40px;" *ngIf="educaciones[3].id != null">
+            <p id="ed1-p13" class="ed-title" [attr.contenteditable]="elements[12][1] ? 'true' : 'false'">{{educaciones[3].nombreCarrera}}</p>
+            <button id="btn-edit-19" class="btn-edit" (click)="onEdit('ed1-p13')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button id="btn-remove-19" class="btn-edit" (click)="onRemove('ed1-p13')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            <hr>
+            <div>
+                <p id="ed1-p14" class="ed-paragraph" [attr.contenteditable]="elements[13][1] ? 'true' : 'false'" *ngIf="educaciones[3].estado == false">En curso</p>
+                <p id="ed1-p14" class="ed-paragraph" [attr.contenteditable]="elements[13][1] ? 'true' : 'false'" *ngIf="educaciones[3].estado == true">Completado</p>
+                <button id="btn-edit-20" class="btn-edit" (click)="onEdit('ed1-p14')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-20" class="btn-edit" (click)="onRemove('ed1-p14')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+            <div>
+                <p id="ed1-p15" class="ed-paragraph" [attr.contenteditable]="elements[14][1] ? 'true' : 'false'">{{educaciones[3]['añoInicio']}} - {{educaciones[3]['añoFin']}}</p>
+                <button id="btn-edit-21" class="btn-edit" (click)="onEdit('ed1-p15')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-21" class="btn-edit" (click)="onRemove('ed1-p15')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+            <div>
+                <a id="ed1-p16" class="ed-paragraph" href="http://www.idiomas.filo.uba.ar/" target="_blank">
+                    <img src="../assets/uba-logo.png" class="ed-logo" alt="uba-logo" style="margin-right: 180px;">
+                    <p class="ed-paragraph" [attr.contenteditable]="elements[15][1] ? 'true' : 'false'">Institución: {{educaciones[3].nombreInstitucion}}</p>
+                </a>
+                <button id="btn-edit-22" class="btn-edit" (click)="onEdit('ed1-p16')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+                <button id="btn-remove-22" class="btn-edit" (click)="onRemove('ed1-p16')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            </div>
+        </div>
+    </div>
+</div>
