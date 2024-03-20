@@ -1,6 +1,5 @@
 
-import { AfterViewInit, Component, OnInit} from '@angular/core';
-import view from './models/view';
+import { Component} from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -8,18 +7,8 @@ import view from './models/view';
     styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent {
     constructor() {
 
-    }
-
-    ngOnInit(): void {
-    
-    }
-
-    ngAfterViewInit(): void {
-        if(localStorage.getItem('user') == 'Admin' && localStorage.getItem('pwd') == 'argprograma') {
-            view.showElements();
-        }
     }
 }

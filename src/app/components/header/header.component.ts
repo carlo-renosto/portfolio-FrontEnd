@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import view from '../../models/view'
 
 @Component({
   selector: 'app-header',
@@ -8,32 +7,51 @@ import view from '../../models/view'
   styleUrls: ['./header.component.css']
 })
 
-export class HeaderComponent {
-    title:string = "App";
-    
+export class HeaderComponent implements AfterViewInit {    
+    @ViewChild('login_button') loginButton!: ElementRef;
+
     constructor(private router: Router) {
+
+    }
+
+    ngAfterViewInit(): void {
+        if(localStorage.getItem('user') == 'Admin' && localStorage.getItem('pwd') == 'argprograma') {
+            this.loginChange(true);
+        }
+        else {
+            this.loginChange(false);
+        }
     }
 
     loginClick() {
         // login
         if(localStorage.getItem('login') != '1') { 
             this.router.navigate(['/login']);
-            view.showLogin();
+            this.loginChange(true);
         }
         // logout
         else { 
+            this.router.navigate(['/home']);
+
             localStorage.setItem('login', '0');
-            view.showElements();
             
             localStorage.setItem('user', 'User');
             localStorage.setItem('pwd', 'user');
+
+            this.loginChange(false);
+        }
+    }
+
+    loginChange(login: boolean) {
+        if(login) {
+            this.loginButton.nativeElement.classList.add("login");
+            this.loginButton.nativeElement.classList.remove("logout");
+            this.loginButton.nativeElement.textContent = "Logout";
+        }
+        else {
+            this.loginButton.nativeElement.classList.add("logout");
+            this.loginButton.nativeElement.classList.remove("login");
+            this.loginButton.nativeElement.textContent = "Login";
         }
     }
 }
-
-window.addEventListener('popstate', function (e) {
-    var state = e.state;
-    if(state !== null) {
-        view.showElements();
-    }
-});

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import DataService from 'src/app/services/data.service';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 import { Experiencia } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
@@ -10,15 +9,12 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 })
 
 export class ExperienceComponent implements OnInit {
-  	elements: [string, boolean][] = [];
+    @Input() isAdmin!: boolean;
+
 	experiencias: Experiencia[] = [];
 
-	constructor(private dataService: DataService, private serviceEX: ExperienciaService) {
-		this.dataService.getElementsExperience().subscribe(elements => {
-            elements["elements_experience"].forEach((element: string) => {
-                this.elements.push([element, false]);
-            });
-        });
+	constructor(private renderer: Renderer2, private serviceEX: ExperienciaService) {
+
 	}
 
 	ngOnInit(): void {
@@ -26,17 +22,15 @@ export class ExperienceComponent implements OnInit {
 			.subscribe(data => this.experiencias = data);
 	}
 
-	onEdit(id: string) {
-        let i = this.elements.findIndex(elm => elm[0] === id);
-        this.elements[i][1] = !this.elements[i][1];
+    onEdit(element: HTMLElement) {
+        let elementEditable: boolean = !(element.contentEditable === "true");
+        this.renderer.setProperty(element, 'contentEditable', elementEditable.toString());
+
+        if(elementEditable) element.focus();
     }
 
-    onRemove(id: string) {
-        var element = document.getElementById(id);
-
-        if(element != null) {
-            element.textContent = "";
-            element.contentEditable = "false";
-        } 
+    onRemove(element: HTMLElement) {
+        this.experiencias[0].puesto = "";
+        this.renderer.setProperty(element, 'contentEditable', 'false');
     }
 }

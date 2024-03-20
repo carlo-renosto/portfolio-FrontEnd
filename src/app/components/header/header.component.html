@@ -1,6 +1,4 @@
  
-<!-- ng generate component components/header -->
-
 <header>
     <a class="link" href="https://argentinaprograma.inti.gob.ar/" target="_blank">
         <img src="../assets/argprograma.png" id="header-logo" class="img-fluid" alt="arg-programa">
@@ -11,5 +9,5 @@
             <img src="../assets/github-logo.png" id="header-logo-2" class="img-fluid" alt="github">
         </a>
     </h5>
-    <button id="header-login" class="btn btn-primary" (click)="loginClick()">Log in</button>
+    <button #login_button id="header-login" class="btn btn-primary" (click)="loginClick()">Log in</button>
 </header>

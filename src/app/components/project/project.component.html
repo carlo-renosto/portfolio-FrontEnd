@@ -1,30 +1,62 @@
 
 <div id="pr-div" class="container-fluid" *ngIf="proyectos && proyectos.length > 0">
     <h3 id="pr-title">Proyectos</h3>
-    <div style="width: fit-content;">
+    <!--Proyecto 1-->
+    <div style="width: fit-content;" *ngIf="!isAdmin">
         <a id="pr-link1" href="https://github.com/carlo-renosto/portfolio-FrontEnd" target="_blank" *ngIf="proyectos[0].id != null">
             <div id="pr-sec1">
-                <h5 id="pr-nombre">{{proyectos[0].nombre}}</h5>
+                <h5>{{proyectos[0].nombre}}</h5>
                 <img src="../assets/argprograma.png" id="section-projects-logo">
-                <p id="pr-desc"><br>{{proyectos[0].descripcion}}</p>
+                <p><br>{{proyectos[0].descripcion}}</p>
                 <hr>
                 <p id="pr-fecha">Fecha de realización: {{proyectos[0].fechaRealizacion}}</p>  
             </div>
         </a>
-        <button id="btn-edit-29" class="btn-edit-project" (click)="onEditProject('pr-sec1', 'pr-link1')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-        <button id="btn-remove-29" class="btn-edit-project" (click)="onRemoveProject('pr-sec1')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
     </div>
-    <div style="width: fit-content;">
+    <div style="width: fit-content;" *ngIf="isAdmin">
+        <div id="pr-sec1">
+            <h5 #pr_nombre class="pr-element">{{proyectos[0].nombre}}</h5>
+            <button class="btn-edit" (click)="onEditElement(pr_nombre)" *ngIf="isButtonVisible[0]"><img src="../assets/edit-icon.png" alt="edit-icon"></button>
+            <button class="btn-edit" (click)="onRemoveElement(pr_nombre)" *ngIf="isButtonVisible[0]"><img src="../assets/delete-icon.png" alt="delete-icon"></button>
+            <img src="../assets/argprograma.png" id="section-projects-logo">
+            <hr>
+            <p #pr_desc class="pr-element"><br>{{proyectos[0].descripcion}}</p>
+            <button class="btn-edit" (click)="onEditElement(pr_desc)" *ngIf="isButtonVisible[0]"><img src="../assets/edit-icon.png" alt="edit-icon"></button>
+            <button class="btn-edit" (click)="onRemoveElement(pr_desc)" *ngIf="isButtonVisible[0]"><img src="../assets/delete-icon.png" alt="delete-icon"></button>
+            <hr>
+            <p #pr_fecha class="pr-element">Fecha de realización: {{proyectos[0].fechaRealizacion}}</p>  
+            <button class="btn-edit" (click)="onEditElement(pr_fecha)" *ngIf="isButtonVisible[0]"><img src="../assets/edit-icon.png" alt="edit-icon"></button>
+            <button class="btn-edit" (click)="onRemoveElement(pr_fecha)" *ngIf="isButtonVisible[0]"><img src="../assets/delete-icon.png" alt="delete-icon"></button>
+        </div>
+        <button class="btn-edit-project" (click)="onEditProject(0)" *ngIf="isAdmin"><img src="../assets/edit-icon.png" alt="edit-icon"></button>
+        <button class="btn-edit-project" (click)="onRemoveProject(0, pr_nombre, pr_desc, pr_fecha)" *ngIf="isAdmin"><img src="../assets/delete-icon.png" alt="delete-icon"></button>
+    </div>
+    <!--Proyecto 2-->
+    <div style="width: fit-content;" *ngIf="!isAdmin">
         <a id="pr-link2" href="https://github.com/carlo-renosto/app-clinica" target="_blank" *ngIf="proyectos[1].id != null">
             <div id="pr-sec2">
-                <h5 id="pr2-nombre">{{proyectos[1].nombre}}</h5>
-                <img src="../assets/argprograma.png" id="section-projects-logo">
+                <h5 class="pr-nombre">{{proyectos[1].nombre}}</h5>
                 <p id="pr-desc"><br>{{proyectos[1].descripcion}}</p>
                 <hr>
                 <p id="pr-fecha">Fecha de realización: {{proyectos[1].fechaRealizacion}}</p>  
             </div>
         </a>
-        <button id="btn-edit-30" class="btn-edit-project" (click)="onEditProject('pr-sec2', 'pr-link2')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-        <button id="btn-remove-30" class="btn-edit-project" (click)="onRemoveProject('pr-sec2')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+    </div>
+    <div style="width: fit-content;" *ngIf="isAdmin">
+        <div id="pr-sec2">
+            <h5 #pr2_nombre class="pr-element">{{proyectos[1].nombre}}</h5>
+            <button class="btn-edit" (click)="onEditElement(pr2_nombre)" *ngIf="isButtonVisible[1]"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button class="btn-edit" (click)="onRemoveElement(pr2_nombre)" *ngIf="isButtonVisible[1]"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            <hr>
+            <p #pr2_desc class="pr-element"><br>{{proyectos[1].descripcion}}</p>
+            <button class="btn-edit" (click)="onEditElement(pr2_desc)" *ngIf="isButtonVisible[1]"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+            <button class="btn-edit" (click)="onRemoveElement(pr2_desc)" *ngIf="isButtonVisible[1]"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+            <hr>
+            <p #pr2_fecha class="pr-element">Fecha de realización: {{proyectos[1].fechaRealizacion}}</p>  
+            <button class="btn-edit" (click)="onEditElement(pr2_fecha)" *ngIf="isButtonVisible[1]"><img src="../assets/edit-icon.png" alt="edit-icon"></button>
+            <button class="btn-edit" (click)="onRemoveElement(pr2_fecha)" *ngIf="isButtonVisible[1]"><img src="../assets/delete-icon.png" alt="delete-icon"></button>
+        </div>
+        <button class="btn-edit-project" (click)="onEditProject(1)" *ngIf="isAdmin"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+        <button class="btn-edit-project" (click)="onRemoveProject(1, pr2_nombre, pr2_desc, pr2_fecha)" *ngIf="isAdmin"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
     </div>
 </div>

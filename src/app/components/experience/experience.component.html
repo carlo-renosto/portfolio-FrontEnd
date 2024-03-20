@@ -1,7 +1,7 @@
 
 <div class="ex-p" *ngIf="experiencias && experiencias.length > 0">
     <h3 id="ex-title"><br>Experiencia</h3>
-    <p id="ex-desc" [attr.contenteditable]="elements[0][1] ? 'true' : 'false'">{{experiencias[0].puesto}}</p>
-    <button id="btn-edit-6" class="btn-edit" (click)="onEdit('ex-desc')"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
-    <button id="btn-remove-6" class="btn-edit" (click)="onRemove('ex-desc')"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+    <p #ex_desc id="ex-desc">{{experiencias[0].puesto}}</p>
+    <button class="btn-edit" (click)="onEdit(ex_desc)" *ngIf="isAdmin"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    <button class="btn-edit" (click)="onRemove(ex_desc)" *ngIf="isAdmin"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
 </div>

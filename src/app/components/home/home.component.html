@@ -1,0 +1,12 @@
+
+<app-header></app-header>
+<app-about [isAdmin]="isAdmin"></app-about>
+<button class="btn-show btn btn-light show-hide-buttons" (click)="onButtonShow()" *ngIf="isAdmin">Mostrar secciones</button>
+<button class="btn-hide btn btn-light show-hide-buttons" (click)="onButtonHide()" *ngIf="isAdmin">Ocultar secciones</button>
+<div #components_div>
+    <app-about-description [isAdmin]="isAdmin"></app-about-description>
+    <app-experience [isAdmin]="isAdmin"></app-experience>
+    <app-education [isAdmin]="isAdmin"></app-education>
+    <app-skill [isAdmin]="isAdmin"></app-skill>
+    <app-project [isAdmin]="isAdmin"></app-project>
+</div>

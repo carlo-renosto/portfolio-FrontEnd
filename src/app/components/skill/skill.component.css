@@ -12,9 +12,17 @@
 }
 
 .btn-edit-skill {
-    display: none;
     margin-left: auto;
     margin-right: auto;
+    border: 0px;
+    background-color: transparent;
+}
+
+.btn-edit-inside {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    bottom: 0;
     border: 0px;
     background-color: transparent;
 }

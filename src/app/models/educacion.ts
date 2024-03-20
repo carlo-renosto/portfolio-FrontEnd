@@ -8,6 +8,7 @@ export class Educacion {
     private _añoInicio: number;
     private _añoFin: number;
     private _estado: boolean;
+    private _estadoS: string;
 
     constructor(id:number=0, idInstitucion:number=0, idPersona:number=0, nombreInstitucion:string="", nombreCarrera:string="", añoInicio:number=0, añoFin:number=0, estado:boolean=false) { 
         this._id = id;
@@ -18,6 +19,7 @@ export class Educacion {
         this._añoInicio = añoInicio;
         this._añoFin = añoFin;
         this._estado = estado;
+        this._estadoS = estado ? "Completado" : "En curso";
     }
 
     get id(): number {
@@ -74,5 +76,12 @@ export class Educacion {
     }
     set estado(estado) {
         this._estado = estado;
+    }
+
+    get estadoS(): string {
+        return this._estadoS;
+    }
+    set estadoS(estadoS) {
+        this._estadoS = estadoS;
     }
 }

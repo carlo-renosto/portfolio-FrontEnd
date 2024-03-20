@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import DataService from 'src/app/services/data.service';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 import { Tecnologia } from 'src/app/models/tecnologia';
 import { TecnologiaService } from 'src/app/services/tecnologia.service';
 
@@ -10,15 +9,11 @@ import { TecnologiaService } from 'src/app/services/tecnologia.service';
 })
 
 export class SkillComponent implements OnInit {
-	elements: [string, boolean][] = [];
+    @Input() isAdmin!: boolean;
+
 	tecnologias: Tecnologia[] = [];
 
-	constructor(private dataService: DataService, private serviceTE: TecnologiaService) {
-		this.dataService.getElementsSkill().subscribe(elements => {
-            elements["elements_skill"].forEach((element: string) => {
-                this.elements.push([element, false]);
-            });
-        });
+	constructor(private renderer: Renderer2, private serviceTE: TecnologiaService) {
 	}
 
   	ngOnInit(): void {
@@ -26,25 +21,21 @@ export class SkillComponent implements OnInit {
 			.subscribe(data => this.tecnologias = data);
 	}
 
-	onEditSkill(id: string, id2: string) {
-        var elementC = document.getElementById(id);
-        var elementN = document.getElementById(id2);
+    onEdit(element: HTMLElement) {
+        let elementEditable: boolean = !(element.contentEditable === "true");
+        this.renderer.setProperty(element, 'contentEditable', elementEditable.toString());
 
-        if(elementC != null && elementN != null) {
-            elementC.contentEditable = elementC.contentEditable == "true" ? "false" : "true";
-            if(elementC.isContentEditable) elementC.focus();
-            elementN.contentEditable = elementN.contentEditable == "true" ? "false" : "true";
-            if(elementN.isContentEditable) elementN.focus();
-        }
+        if(elementEditable) element.focus();
     }
 
-	onRemoveSkill(id: string, id2: string) {
-        var elementC = document.getElementById(id);
-        var elementN = document.getElementById(id2);
+    onRemovePerc(element: HTMLElement) {
+        this.renderer.setProperty(element, 'textContent', '0%');
+        this.renderer.setProperty(element, 'contentEditable', 'false');
+    }
 
-        if(elementC != null && elementN != null) {
-            elementC.textContent = "";
-            elementN.textContent = "";
-        }
+    
+    onRemoveSkill(element: HTMLElement) {
+        this.renderer.setProperty(element, 'textContent', '-');
+        this.renderer.setProperty(element, 'contentEditable', 'false');
     }
 }

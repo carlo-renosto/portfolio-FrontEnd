@@ -1,0 +1,29 @@
+
+<div *ngIf="personas && personas.length > 0">
+    <div class="p-banner-container">   
+        <img src="../assets/banner.png" id="p-banner" class="img-fluid" alt="banner-img">
+        <img src="../assets/perfil.png" id="p-profile-pic" class="img-fluid" alt="profile-img">
+        <input type="file" id="fileInput2" style="display: none;" accept="image/jpeg, image/png">
+        <button id="btn-edit-1" class="btn-edit" (click)="onRemoveImage()" *ngIf="isAdmin"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        <input type="file" id="fileInput" style="display: none;" accept="image/jpeg, image/png">
+        <button  id="btn-remove-1" class="btn-edit" (click)="onUploadImage()" *ngIf="isAdmin"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    </div>
+    
+    <div id="p-name">
+        <h4 #p_name_text id="p-name-text">{{personas[0].nombre}} {{personas[0].apellido}}</h4>
+        <button class="btn-edit" (click)="onRemove(p_name_text)" *ngIf="isAdmin"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        <button class="btn-edit" (click)="onEdit(p_name_text)" *ngIf="isAdmin"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    </div>
+
+    <div id="p-desc">
+        <h6 #p_desc id="p-desc-p">{{personas[0].edad}} años. {{personas[0].ocupacion}}</h6> 
+        <button class="btn-edit" (click)="onRemove(p_desc)" *ngIf="isAdmin"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        <button class="btn-edit" (click)="onEdit(p_desc)" *ngIf="isAdmin"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    </div>
+
+    <div id="p-loc">
+        <h6 #p_loc id="p-loc-p">{{personas[0].ciudad}}, {{personas[0].pais}}</h6>
+        <button class="btn-edit" (click)="onRemove(p_loc)" *ngIf="isAdmin"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+        <button class="btn-edit" (click)="onEdit(p_loc)" *ngIf="isAdmin"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    </div>
+</div>

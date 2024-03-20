@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 import { Proyecto } from 'src/app/models/proyecto';
-import DataService from 'src/app/services/data.service';
 import { ProyectoService } from 'src/app/services/proyecto.service';
 
 @Component({
@@ -10,15 +9,13 @@ import { ProyectoService } from 'src/app/services/proyecto.service';
 })
 
 export class ProjectComponent implements OnInit {
-	elements: [string, boolean][] = [];
+	@Input() isAdmin!: boolean;
+	isButtonVisible: boolean[] = [false];
+
 	proyectos: Proyecto[] = [];
 
-	constructor(private dataService: DataService, private servicePR: ProyectoService) {
-		this.dataService.getElementsProject().subscribe(elements => {
-            elements["elements_project"].forEach((element: string) => {
-                this.elements.push([element, false]);
-            });
-        });
+	constructor(private renderer: Renderer2, private servicePR: ProyectoService) {
+
 	}
 
   	ngOnInit(): void {
@@ -26,26 +23,26 @@ export class ProjectComponent implements OnInit {
 			.subscribe(data => this.proyectos = data);
 	}
 
-	onEditProject(id: string, id2: string) {
-        var element = document.getElementById(id);
-        var address = document.getElementById(id2);
-
-        if(element != null && address != null) {
-            address.style.pointerEvents = element.contentEditable == "true" ? 'initial' : "none";
-            element.contentEditable = element.contentEditable == "true" ? "false" : "true";
-        }
+	onEditProject(i: number) {
+		this.isButtonVisible[i] = !this.isButtonVisible[i];
     }
 
-	onRemoveProject(id: string) {
-        var element = document.getElementById(id);
+	onEditElement(element: HTMLElement) {
+		let elementEditable: boolean = !(element.contentEditable === "true");
+        this.renderer.setProperty(element, 'contentEditable', elementEditable.toString());
 
-        if(element != null) {
-            var height: string = window.getComputedStyle(element).getPropertyValue('height');
-            var width: string = window.getComputedStyle(element).getPropertyValue('width');
+        if(elementEditable) element.focus();
+	}
 
-            element.textContent = " ";
-            element.style.height = height;
-            element.style.width = width;
-        }
+	onRemoveElement(element: HTMLElement) {
+		this.renderer.setProperty(element, 'textContent', '');
+        this.renderer.setProperty(element, 'contentEditable', 'false');
+	}
+
+	onRemoveProject(i: number, element1: HTMLElement, element2: HTMLElement, element3: HTMLElement) {
+        this.isButtonVisible[i] = false;
+		this.renderer.setProperty(element1, 'textContent', '');
+		this.renderer.setProperty(element2, 'textContent', '');
+		this.renderer.setProperty(element3, 'textContent', '');
     }
 }

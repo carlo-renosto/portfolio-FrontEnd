@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import DataService from 'src/app/services/data.service';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 import { Educacion } from 'src/app/models/educacion';
 import { EducacionService } from 'src/app/services/educacion.service';
 
@@ -10,33 +9,39 @@ import { EducacionService } from 'src/app/services/educacion.service';
 })
 
 export class EducationComponent implements OnInit {
-	elements: [string, boolean][] = [];
+    @Input() isAdmin!: boolean;
+
 	educaciones: Educacion[] = [];
 
-	constructor(private dataService: DataService, private serviceED: EducacionService) {
-		this.dataService.getElementsEducation().subscribe(elements => {
-            elements["elements_education"].forEach((element: string) => {
-                this.elements.push([element, false]);
-            });
-        });
-	}
+	constructor(private renderer: Renderer2, private serviceED: EducacionService) {
+	
+    }
 
   	ngOnInit(): void {
 		this.serviceED.getEducaciones()
-			.subscribe(data => this.educaciones = data);
+			.subscribe(data => {
+                this.educaciones = data
+                this.educaciones.forEach(educacion => {
+                    educacion.estadoS = educacion.estado ? "Completado" : "En curso";
+                });
+            });
 	}
 
-	onEdit(id: string) {
-        let i = this.elements.findIndex(elm => elm[0] === id);
-        this.elements[i][1] = !this.elements[i][1];
+    onEdit(element: HTMLElement) {
+        let elementEditable: boolean = !(element.contentEditable === "true");
+        this.renderer.setProperty(element, 'contentEditable', elementEditable.toString());
+
+        if(elementEditable) element.focus();
     }
 
-    onRemove(id: string) {
-        var element = document.getElementById(id);
+    onRemove(element: HTMLElement) {
+        this.renderer.setProperty(element, 'textContent', '');
+        this.renderer.setProperty(element, 'contentEditable', 'false');
+    }
 
-        if(element != null) {
-            element.textContent = "";
-            element.contentEditable = "false";
-        } 
+    onEditLink(event: Event, element: HTMLElement) {
+        event.preventDefault();
+
+        this.onEdit(element);
     }
 }

@@ -30,6 +30,10 @@
     display: inline-block;
 }
 
+.ed-place {
+    display: inline-block;
+}
+
 .ed-place:hover {
     transition: color .1.5s;
     color: #00A6FF;
@@ -47,7 +51,6 @@
 .btn-edit {
     position: relative;
     float: right;
-    display: none;
     border: 0px;
     background-color: transparent; 
 }

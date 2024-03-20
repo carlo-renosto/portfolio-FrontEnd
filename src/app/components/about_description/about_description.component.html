@@ -1,0 +1,7 @@
+
+<div id="a-p" class="container-fluid" *ngIf="personas && personas.length > 0">
+    <h3 id="a-title">Acerca de</h3>
+    <p #a_desc id="a-desc">{{personas[0].descripcion}}</p>
+    <button id="btn-edit-5" class="btn-edit" (click)="onEdit(a_desc)" *ngIf="isAdmin"><img src="../assets/edit-icon.png" class="img-fluid" alt="edit-icon"></button>
+    <button id="btn-remove-5" class="btn-edit" (click)="onRemove(a_desc)" *ngIf="isAdmin"><img src="../assets/delete-icon.png" class="img-fluid" alt="delete-icon"></button>
+</div>
